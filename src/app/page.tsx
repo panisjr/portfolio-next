@@ -4,6 +4,7 @@ import Navbar from "@/components/Navbar";
 import LandingPage from "@/components/LandingPage";
 import LatestWorkPage from "@/components/LatestProjectsPage";
 import FrameworksList from "@/components/FrameworksList";
+import Footer from "@/components/Footer";
 
 export default function Home() {
   return (
@@ -15,6 +16,7 @@ export default function Home() {
         <LandingPage />
         <FrameworksList />
         <LatestWorkPage />
+        <Footer/>
       </div>
     </div>
   );

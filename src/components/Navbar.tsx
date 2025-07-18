@@ -66,7 +66,7 @@ export default function Navbar() {
   const router = useRouter();
   return (
     <>
-      <div className="flex flex-wrap items-center justify-evenly py-5 gap-4">
+      <div className="flex flex-wrap items-center justify-evenly py-5 gap-4 font-poppins">
         <div
           onClick={() => router.push("/")}
           className="font-amarante text-4xl cursor-pointer"
@@ -246,7 +246,7 @@ export default function Navbar() {
           <a
             href="/assets/files/resume.pdf"
             download
-            className="bg-[#ff6347] rounded-md px-3 py-2.5 whitespace-nowrap text-white"
+            className="bg-[#ff6347] rounded-md px-3 py-2.5 whitespace-nowrap text-white font-poppins"
           >
             Download CV
           </a>

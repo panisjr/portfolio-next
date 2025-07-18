@@ -23,7 +23,7 @@ export default function LandingPage() {
   };
   return (
     <div className="w-full flex md:flex-nowrap flex-wrap items-center justify-center">
-      <div className="w-full md:max-w-[950px] px-28 md:ps-48 py-16 flex flex-col items-start justify-start">
+      <div className="w-full md:max-w-[950px] px-28 ps-44 md:ps-48 py-16 flex flex-col items-start justify-start">
         <p>Hello, I&apos;m</p>
         <p className="font-amarante text-5xl">Ramel Panis</p>
         <h1 className="text-3xl font-bold text-nowrap">
@@ -40,7 +40,7 @@ export default function LandingPage() {
             />
           </span>
         </h1>
-        <p className="w-full">
+        <p className="w-full font-poppins">
           Fueled by curiosity and a strong desire for growth, I’m passionate
           about honing my technical abilities and staying ahead in the
           ever-evolving world of technology.
@@ -73,7 +73,7 @@ export default function LandingPage() {
         </div>
         <div className="w-full md:w-fit flex items-center justify-center md:justify-start gap-5 py-4">
           <PopUpOnLoad>
-            <button className="w-[120px] h-[40px] bg-[#20b9f0] rounded-sm text-[#081b2b] font-semibold hover:bg-[#ededed] hover:text-[#081b2b] duration-200 hover:border-[#20b9f0] border-2 border-transparent">
+            <button className="w-[120px] h-[40px] bg-[#20b9f0] rounded-sm text-[#081b2b] font-semibold hover:bg-white hover:text-[#081b2b] duration-200 hover:border-[#20b9f0] border-2 border-transparent">
               Hire Me
             </button>
           </PopUpOnLoad>
