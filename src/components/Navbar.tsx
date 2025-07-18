@@ -72,7 +72,7 @@ export default function Navbar() {
           className="font-amarante text-4xl cursor-pointer"
         >
           <span className="text-[#20b9f0]">R</span>
-          <span>ams</span>
+          <span>AMS</span>
         </div>
         <NavigationMenu viewport={false}>
           <NavigationMenuList>
