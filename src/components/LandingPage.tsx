@@ -89,13 +89,13 @@ export default function LandingPage() {
       </div>
       <div className="w-fit md:w-full md:flex md:items-center md:justify-start justify-center md:ps-[150px]">
         <ZoomInOnLoad>
-          <div className="relative w-[500px] md:w-[400px] h-[600px] rounded-md">
+          <div className="relative w-[500px] md:w-[400px] h-[625px] rounded-md">
             <Image
-              src={"/assets/images/gradPic2.jpg"}
+              src={"/assets/images/gradpic.png"}
               alt="Graduation picture"
               fill
               sizes="w-[500px] h-[600px]"
-              className="md:object-contain object-cover rounded-md"
+              className="md:object-cover object-cover rounded-md"
               priority
             />
           </div>
