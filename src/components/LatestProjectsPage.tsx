@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import Image from "next/image";
 import React, { useState } from "react";
 import SlideUp from "./animate/SlideUp";
@@ -11,13 +11,6 @@ export interface latestProjectTypes {
   image: string;
 }
 const latestProject: latestProjectTypes[] = [
-  {
-    projectName: "New Portfolio!",
-    date: "2025-PRESENT",
-    description:
-      "Currently working on my new portofolio from Page Router to App Router",
-    image: "/assets/images/newportfolio.png",
-  },
   {
     projectName: "DRSchecker - nextjs, gemini api",
     date: "2024-2025",
