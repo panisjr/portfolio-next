@@ -66,7 +66,7 @@ export default function Navbar() {
   const router = useRouter();
   return (
     <>
-      <div className="flex flex-wrap items-center justify-evenly py-5 gap-4 font-poppins">
+      <div className="flex flex-wrap items-center justify-evenly py-5 gap-4 font-poppins bg-[#e5e7eb]">
         <div
           onClick={() => router.push("/")}
           className="flex flex-row items-center justify-center font-rubik text-[#303030] text-4xl cursor-pointer"
@@ -87,7 +87,10 @@ export default function Navbar() {
           <NavigationMenuList>
             {/* Home */}
             <NavigationMenuItem className="z-10">
-              <NavigationMenuTrigger onClick={() => router.push("/")}>
+              <NavigationMenuTrigger
+                onClick={() => router.push("/")}
+                className="bg-[#e5e7eb]"
+              >
                 Home
               </NavigationMenuTrigger>
               <NavigationMenuContent>
@@ -144,16 +147,15 @@ export default function Navbar() {
             </NavigationMenuItem>
             {/* About */}
             <NavigationMenuItem className="z-10">
-              <NavigationMenuLink
-                asChild
-                className={navigationMenuTriggerStyle()}
-              >
+              <NavigationMenuLink asChild className="bg-[#e5e7eb]">
                 <Link href="/about/">About</Link>
               </NavigationMenuLink>
             </NavigationMenuItem>
             {/* Projects */}
             <NavigationMenuItem className="z-10">
-              <NavigationMenuTrigger>Projects</NavigationMenuTrigger>
+              <NavigationMenuTrigger className="bg-[#e5e7eb]">
+                Projects
+              </NavigationMenuTrigger>
               <NavigationMenuContent>
                 <ul className="grid w-[400px] gap-2 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
                   {components.map((component) => (
@@ -170,7 +172,9 @@ export default function Navbar() {
             </NavigationMenuItem>
             {/* Skills */}
             <NavigationMenuItem className="z-10">
-              <NavigationMenuTrigger>Skills</NavigationMenuTrigger>
+              <NavigationMenuTrigger className="bg-[#e5e7eb]">
+                Skills
+              </NavigationMenuTrigger>
               <NavigationMenuContent>
                 <ul className="grid w-[300px] gap-4">
                   <li>
@@ -207,7 +211,9 @@ export default function Navbar() {
             </NavigationMenuItem>
             {/* Experience */}
             <NavigationMenuItem className="z-10">
-              <NavigationMenuTrigger>Experience</NavigationMenuTrigger>
+              <NavigationMenuTrigger className="bg-[#e5e7eb]">
+                Experience
+              </NavigationMenuTrigger>
               <NavigationMenuContent>
                 <ul className="grid w-[250px] gap-4">
                   <li>
@@ -229,7 +235,9 @@ export default function Navbar() {
             </NavigationMenuItem>
             {/* Contact */}
             <NavigationMenuItem className="z-10">
-              <NavigationMenuTrigger>Contact</NavigationMenuTrigger>
+              <NavigationMenuTrigger className="bg-[#e5e7eb]">
+                Contact
+              </NavigationMenuTrigger>
               <NavigationMenuContent>
                 <ul className="grid w-[240px] gap-4">
                   <li>

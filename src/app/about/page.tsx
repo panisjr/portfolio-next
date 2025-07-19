@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import Navbar from "@/components/Navbar";
 import ZoomInOnLoad from "@/components/animate/ZoomIn";
@@ -7,9 +8,15 @@ import SlideUp from "@/components/animate/SlideUp";
 import SlideLeft from "@/components/animate/SlideLeft";
 import SlideRight from "@/components/animate/SlideRight";
 
+import { gsap } from "gsap";
+import { ScrollToPlugin } from "gsap/ScrollToPlugin";
+
+gsap.registerPlugin(ScrollToPlugin);
+
 export default function Index() {
+
   return (
-    <div className="w-full font-poppins tracking-wider">
+    <div className="w-full font-poppins tracking-wider" id="target-element">
       <div className="mx-auto">
         {/* Header */}
         <Navbar />
@@ -92,17 +99,26 @@ export default function Index() {
                 />
               </div>
             </SlideUp>
-            <div className="py-10 max-w-[500px]">
-              <SlideLeft>
-                <p>
-                  A colleague recommended this book to me, and it&#34;s been a
-                  game-changer. I’ve always been curious about the way people
-                  think and make decisions, and even the first chapter gave me
-                  practical insights—especially useful as a front-end developer.
-                  Reading helps me appreciate the small details that contribute
-                  to better design decisions and outcomes.
-                </p>
-              </SlideLeft>
+            <div className="py-10 max-w-[500px]" id="target-element">
+              <p>
+                A colleague recommended this book to me, and it&#34;s been a
+                game-changer. I’ve always been curious about the way people
+                think and make decisions, and even the first chapter gave me
+                practical insights—especially useful as a front-end developer.
+                Reading helps me appreciate the small details that contribute to
+                better design decisions and outcomes.
+              </p>
+              <button
+                onClick={() =>
+                  gsap.to(window, {
+                    scrollTo: "#target-element",
+                    duration: 1,
+                    ease: "power2.out",
+                  })
+                }
+              >
+                Scroll to Section
+              </button>
             </div>
           </div>
         </div>

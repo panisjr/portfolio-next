@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import Image from "next/image";
 import React from "react";
 import { Typewriter } from "react-simple-typewriter";
@@ -22,8 +22,8 @@ export default function LandingPage() {
     }
   };
   return (
-    <div className="w-full flex md:flex-nowrap flex-wrap items-center justify-center">
-      <div className="w-full md:max-w-[950px] px-28 ps-44 md:ps-48 py-16 flex flex-col items-start justify-start">
+    <div className="w-full flex md:flex-nowrap flex-wrap items-center justify-center bg-[#e5e7eb]">
+      <div className="w-full  px-28 ps-44 md:ps-48 py-16 flex flex-col items-start justify-start">
         <p>Hello, I&apos;m</p>
         <p className="font-amarante text-5xl">Ramel Panis</p>
         <h1 className="text-3xl font-bold text-nowrap">

@@ -12,14 +12,11 @@ import {
 } from "lucide-react";
 import Image from "next/image";
 import React from "react";
+import { gsap } from "gsap";
+import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 
+gsap.registerPlugin(ScrollToPlugin);
 export default function Footer() {
-    const handleSmoothNavigate = (id: string) => {
-    const el = document.getElementById(id);
-    if (el) {
-      el.scrollIntoView({ behavior: "smooth", block: "start" });
-    }
-  };
   return (
     <footer className="w-full h-[480px] bg-[#e5e7eb] text-white">
       {/* top-left,top-right,bottom-right, bottom-left, top-right */}
@@ -28,7 +25,13 @@ export default function Footer() {
           <div className="w-full flex flex-row items-center justify-center">
             <div
               className="w-full flex flex-row items-center justify-start gap-5"
-              onClick={() => handleSmoothNavigate("home")}
+              onClick={() =>
+                gsap.to(window, {
+                  scrollTo: "#home",
+                  duration: 1,
+                  ease: "power2.out",
+                })
+              }
             >
               <div className="flex flex-row items-center justify-center font-rubik text-[#dbdbdb] text-4xl cursor-pointer">
                 <div className="relative w-[70px] h-[70px]">
