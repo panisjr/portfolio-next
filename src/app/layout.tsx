@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Amarante, Didact_Gothic } from "next/font/google";
+import { Amarante, Didact_Gothic, Rubik_80s_Fade } from "next/font/google";
 import "./globals.css";
 
 const poppins = Didact_Gothic({
@@ -10,6 +10,11 @@ const poppins = Didact_Gothic({
 const amarante = Amarante({
   weight: "400",
   variable: "--font-amarante",
+  subsets: ["latin"],
+});
+const rubik = Rubik_80s_Fade({
+  weight: "400",
+  variable: "--font-rubik",
   subsets: ["latin"],
 });
 export const metadata: Metadata = {
@@ -24,7 +29,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${poppins.variable} ${amarante.variable} antialiased`}>
+      <body className={`${poppins.variable} ${amarante.variable}  ${rubik.variable} antialiased`}>
         {children}
       </body>
     </html>

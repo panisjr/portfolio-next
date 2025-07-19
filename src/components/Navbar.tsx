@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import React from "react";
 import {
   NavigationMenu,
@@ -69,10 +69,19 @@ export default function Navbar() {
       <div className="flex flex-wrap items-center justify-evenly py-5 gap-4 font-poppins">
         <div
           onClick={() => router.push("/")}
-          className="font-amarante text-4xl cursor-pointer"
+          className="flex flex-row items-center justify-center font-rubik text-[#303030] text-4xl cursor-pointer"
         >
-          <span className="text-[#20b9f0]">R</span>
-          <span>AMS</span>
+          <div className="relative w-[70px] h-[70px]">
+            <Image
+              src={"/assets/images/nameLogo.png"}
+              alt="Logo name"
+              sizes="w-full h-full"
+              fill
+              priority
+              className="object-contain"
+            />
+          </div>
+          <p className="pt-5">ams</p>
         </div>
         <NavigationMenu viewport={false}>
           <NavigationMenuList>
