@@ -10,7 +10,7 @@ export default function FrameworksList() {
     >
       <div className=" bg-slate-100 text-[#081b2b] border-t-2 border-t-gray-300">
         <div className="flex items-center justify-center pt-5">
-          <p className="font-amarante text-3xl font-semibold text-nowra tracking-widest">
+          <p className="font-amarante text-3xl font-semibold text-nowrap tracking-widest">
             FRAMEWORKS
           </p>
         </div>

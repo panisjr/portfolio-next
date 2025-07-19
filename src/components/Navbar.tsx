@@ -7,7 +7,6 @@ import {
   NavigationMenuLink,
   NavigationMenuList,
   NavigationMenuTrigger,
-  navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
 import { Mail, Phone } from "lucide-react";
 import Image from "next/image";

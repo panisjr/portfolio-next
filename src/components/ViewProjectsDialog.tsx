@@ -1,13 +1,18 @@
+"use client";
 import {
   Dialog,
   DialogClose,
   DialogContent,
-  DialogDescription,
   DialogHeader,
   DialogTitle,
 } from "@/components/ui/dialog";
 import { X } from "lucide-react";
 import Image from "next/image";
+import { gsap } from "gsap";
+import { ScrollToPlugin } from "gsap/ScrollToPlugin";
+import { useEffect } from "react";
+
+gsap.registerPlugin(ScrollToPlugin);
 
 export interface viewProjectTypes {
   projectName: string;
@@ -15,6 +20,7 @@ export interface viewProjectTypes {
   image: string[];
   framework: { icon: string; name: string }[];
 }
+
 const loc = "/assets/images";
 const latestProject: viewProjectTypes[] = [
   {
@@ -79,81 +85,92 @@ export function ViewProjectsDialog({
   setOpen: React.Dispatch<React.SetStateAction<boolean>>;
   projectView: string;
 }) {
+  useEffect(() => {
+    if (open) {
+      const timeout = setTimeout(() => {
+        gsap.to(window, {
+          scrollTo: "#target-element",
+          duration: 1,
+          ease: "power2.inOut",
+        });
+      }, 300); // slight delay ensures DOM is rendered
+
+      return () => clearTimeout(timeout);
+    }
+  }, [open]);
+
   const found = latestProject.filter((a) => a.projectName === projectView);
+
   return (
     <>
-      {found ? (
+      {found &&
         found.map((item, index) => (
           <Dialog key={index} open={open}>
             <DialogContent
               showCloseButton={false}
               className="font-lexend w-full min-w-[1000px] h-[620px]"
+              id="target-element"
             >
               <DialogHeader>
                 <DialogClose
-                  onClick={() => setOpen((prev) => prev !== prev)}
+                  onClick={() => setOpen(false)}
                   className="absolute right-4 top-4 cursor-pointer"
                 >
                   <X />
                 </DialogClose>
                 <DialogTitle>{item.projectName}</DialogTitle>
-                <DialogDescription className="text-[#081b2b]">
-                  <div className="w-full h-[140px] flex items-center justify-center">
-                    <div className="w-full h-full">
-                      <p>Description:</p>
-                      <p className="px-2.5 font-light">{item.description}</p>
-                    </div>
-                    <div className="w-full h-full">
-                      <p>Framework:</p>
-                      <div className="flex flex-wrap gap-5 px-5 py-2">
-                        {item.framework?.map((frame, idx) => (
-                          <div
-                            key={idx}
-                            className="flex items-center justify-center flex-col"
-                          >
-                            <div className="relative w-[60px] h-[60px] rounded-md">
-                              <Image
-                                src={`${frame.icon}`}
-                                alt="Project Image"
-                                fill
-                                priority
-                                sizes="w-full h-full"
-                                className="object-contain rounded-md"
-                              />
-                            </div>
-                            {frame.name}
+                <div className="text-[#081b2b] w-full h-[140px] flex items-center justify-center">
+                  <div className="w-full h-full">
+                    <p>Description:</p>
+                    <p className="px-2.5 font-light">{item.description}</p>
+                  </div>
+                  <div className="w-full h-full">
+                    <p>Framework:</p>
+                    <div className="flex flex-wrap gap-5 px-5 py-2">
+                      {item.framework?.map((frame, idx) => (
+                        <div
+                          key={idx}
+                          className="flex items-center justify-center flex-col"
+                        >
+                          <div className="relative w-[60px] h-[60px] rounded-md">
+                            <Image
+                              src={frame.icon}
+                              alt="Framework Icon"
+                              fill
+                              priority
+                              sizes="(max-width: 60px) 100vw, 60px"
+                              className="object-contain rounded-md"
+                            />
                           </div>
-                        ))}
+                          {frame.name}
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </DialogHeader>
+
+              <div className="overflow-y-auto h-[400px]">
+                {item.image.map((i, idx) => (
+                  <div key={idx} className="flex flex-wrap items-center">
+                    <div className="w-[500px] h-[500px] flex-1 space-y-2 gap-2 rounded-md px-3 py-10">
+                      <div className="relative w-full h-full rounded-md">
+                        <Image
+                          src={i}
+                          alt="Project Image"
+                          fill
+                          priority
+                          sizes="(max-width: 500px) 100vw, 500px"
+                          className="object-cover rounded-md shadow-md"
+                        />
                       </div>
                     </div>
                   </div>
-                </DialogDescription>
-              </DialogHeader>
-              <div className="overflow-y-auto h-[400px]">
-                {item.image &&
-                  item.image.map((i, idx) => (
-                    <div key={idx} className="flex flex-wrap items-center">
-                      <div className="w-[500px] h-[500px] flex-1 space-y-2 gap-2 rounded-md px-3 py-10">
-                        <div className="relative w-full h-full rounded-md">
-                          <Image
-                            src={`${i}`}
-                            alt="Project Image"
-                            fill
-                            priority
-                            sizes="w-full h-full"
-                            className="object-cover rounded-md shadow-md"
-                          />
-                        </div>
-                      </div>
-                    </div>
-                  ))}
+                ))}
               </div>
             </DialogContent>
           </Dialog>
-        ))
-      ) : (
-        <p>Not found</p>
-      )}
+        ))}
     </>
   );
 }
