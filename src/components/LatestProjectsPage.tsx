@@ -45,7 +45,7 @@ export default function LatestProjectsPage() {
   return (
     <>
       <section
-        className="w-full h-screen md:px-56 px-10 py-16 bg-gray-200"
+        className="w-full h-fit md:px-10 px-10 py-16 bg-gray-200"
         id="showOfMyLatestWork"
       >
         <div className="flex items-center justify-center gap-10 mb-10">
@@ -63,7 +63,7 @@ export default function LatestProjectsPage() {
                   setOpen(true);
                   setProjectView(item.projectName);
                 }}
-                className="w-[430px] md:w-[330px] h-[340px] md:h-[270px] bg-gray-100 shadow-lg rounded-md flex flex-col items-center justify-center p-2.5 gap-2.5 hover:scale-105 transition-transform duration-300 cursor-pointer"
+                className="w-[430px] md:w-[430px] h-[340px] md:h-[370px] bg-gray-100 shadow-lg rounded-md flex flex-col items-center justify-center p-2.5 gap-2.5 hover:scale-105 transition-transform duration-300 cursor-pointer"
               >
                 <div className="relative w-full h-full rounded-md">
                   <Image
