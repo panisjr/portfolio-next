@@ -45,7 +45,7 @@ export default function LatestProjectsPage() {
   return (
     <>
       <section
-        className="w-full h-fit md:px-10 px-10 py-16 bg-gray-200"
+        className="w-full h-fit md:px-10 px-10 py-16 bg-gray-200 font-poppins"
         id="showOfMyLatestWork"
       >
         <div className="flex items-center justify-center gap-10 mb-10">
@@ -63,7 +63,7 @@ export default function LatestProjectsPage() {
                   setOpen(true);
                   setProjectView(item.projectName);
                 }}
-                className="w-[430px] md:w-[430px] h-[340px] md:h-[370px] bg-gray-100 shadow-lg rounded-md flex flex-col items-center justify-center p-2.5 gap-2.5 hover:scale-105 transition-transform duration-300 cursor-pointer"
+                className="w-[430px] md:w-[430px] h-[340px] md:h-[370px] bg-gray-100 shadow-lg rounded-lg flex flex-col items-center justify-center p-2.5 gap-2.5 hover:scale-105 hover:shadow-lg hover:shadow-[#303030] border hover:border-[#303030] transition-all duration-300 cursor-pointer"
               >
                 <div className="relative w-full h-full rounded-md">
                   <Image
@@ -76,11 +76,11 @@ export default function LatestProjectsPage() {
                   />
                 </div>
                 <div className="flex flex-col items-start justify-start w-full px-4">
-                  <p className="text-[18px] font-thin">{item.projectName}</p>
-                  <p className="font-thin text-[14px]">
+                  <p className="text-[18px] font-semibold">{item.projectName}</p>
+                  <p>
                     {item.description.slice(0, 60) + ". . ."}
                   </p>
-                  <p className="text-[10px]">{item.date}</p>
+                  <p className="text-[14px] w-full text-end">{item.date}</p>
                 </div>
               </div>
             </SlideUp>

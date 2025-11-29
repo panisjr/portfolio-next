@@ -21,13 +21,13 @@ export default function LandingPage() {
     }
   };
   return (
-    <div className="w-full flex md:flex-nowrap flex-wrap items-center justify-center bg-[#e5e7eb] font-poppins">
+    <div id="landingPage" className="w-full flex md:flex-nowrap flex-wrap items-center justify-center bg-[#e5e7eb] text-[#303030] font-poppins overflow-x-hidden">
       <div className="w-full  px-28 ps-44 md:ps-48 py-16 flex flex-col items-start justify-start">
         <p className="text-3xl px-1">Hello, I&apos;m</p>
         <p className="font-amarante text-8xl font-bold">Ramel Panis</p>
         <h1 className="px-1 text-3xl font-semibold text-nowrap">
           I am a{" "}
-          <span style={{ color: "tomato" }}>
+          <span style={{ color: "#20b9f0" }}>
             <Typewriter
               words={["Web Developer", "UI Designer", "Lifelong Learner"]}
               loop={true}
@@ -39,7 +39,7 @@ export default function LandingPage() {
             />
           </span>
         </h1>
-        <p className="px-1 w-full font-poppins">
+        <p className="px-1 text-lg w-full font-poppins">
           Fueled by curiosity and a strong desire for growth, I’m passionate
           about honing my technical abilities and staying ahead in the
           ever-evolving world of technology.
