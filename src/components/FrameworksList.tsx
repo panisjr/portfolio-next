@@ -14,7 +14,7 @@ export default function FrameworksList() {
             FRAMEWORKS
           </p>
         </div>
-        <div className="flex items-center justify-center overflow-hidden">
+        <div className="flex items-center justify-center overflow-hidden py-5">
           <AutoScrollCards duration={70}>
             {cards.map((_, index) => (
               <FrameworksCards key={index} />
