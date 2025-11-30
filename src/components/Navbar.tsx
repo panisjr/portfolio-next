@@ -45,7 +45,7 @@ function ListItem({
     <li {...props}>
       <NavigationMenuLink asChild>
         <Link href={href}>
-          <div className="text-sm leading-none font-medium">{title}</div>
+          <div className="text-sm leading-none font-bold">{title}</div>
           <p className="text-muted-foreground line-clamp-2 text-sm leading-snug">
             {children}
           </p>
@@ -66,7 +66,7 @@ export default function Navbar() {
   return (
     <>
       <div className="w-full flex flex-row items-center py-2 gap-4 px-20 font-poppins sticky top-0 bg-[#e5e7eb]/30 z-10 text-[#303030]">
-        <div className="bg-[#303030]/10 w-full absolute inset-0 backdrop-blur-xl z-[-10]"></div>
+        <div className="bg-[#303030]/10 w-full absolute inset-0 backdrop-blur-sm z-[-10]"></div>
         <div
           onClick={() => router.push("/")}
           className="flex flex-row items-center justify-center font-rubik text-[#303030] text-4xl cursor-pointer"
@@ -112,7 +112,7 @@ export default function Navbar() {
                               sizes="w-[50px] h-[50px]"
                             />
                           </div>
-                          <div className="mt-4 mb-2 text-lg font-medium font-poppins">
+                          <div className="mt-4 mb-2 text-lg font-bold font-poppins">
                             latest project
                           </div>
                           <p className="text-muted-foreground text-sm leading-tight">
@@ -130,7 +130,7 @@ export default function Navbar() {
                       className="px-2 cursor-pointer hover:bg-slate-100 rounded-md flex flex-col items-start justify-center"
                       onClick={() => handleSmoothNavigate("showOfMyLatestWork")}
                     >
-                      <p className="text-[14px]">My Latest Projects</p>
+                      <p className="text-[14px] font-bold">My Latest Projects</p>
                       <p className="text-[14px] text-slate-500">
                         Take a little preview of my latest projects
                       </p>
@@ -139,7 +139,7 @@ export default function Navbar() {
                       className="px-2 cursor-pointer hover:bg-slate-100 rounded-md flex flex-col items-start justify-center"
                       onClick={() => handleSmoothNavigate("frameworksList")}
                     >
-                      <p className="text-[14px]">Frameworks</p>
+                      <p className="text-[14px] font-bold">Frameworks</p>
                       <p className="text-[14px] text-slate-500">
                         Let me show you some of my frameworks
                       </p>
@@ -185,7 +185,7 @@ export default function Navbar() {
                     <li>
                       <NavigationMenuLink asChild>
                         <div>
-                          <div className="font-medium">
+                          <div className="font-bold">
                             Front-End and Back-End Developer
                           </div>
                           <div className="text-muted-foreground">
@@ -196,7 +196,7 @@ export default function Navbar() {
                       </NavigationMenuLink>
                       <NavigationMenuLink asChild>
                         <Link href="#">
-                          <div className="font-medium">Problem Solving</div>
+                          <div className="font-bold">Problem Solving</div>
                           <div className="text-muted-foreground">
                             Learn how to use the library.
                           </div>
@@ -224,8 +224,8 @@ export default function Navbar() {
                     <li>
                       <NavigationMenuLink asChild>
                         <Link href="https://symphonicsco.com/">
-                          Internship at Symphonics Co. Ltd. as a Front-End
-                          Developer using frameworks such as Nextjs
+                          Internship and currently working at Symphonics Co. Ltd. as a Front-End
+                          Developer using Nextjs
                         </Link>
                       </NavigationMenuLink>
                       {/* <NavigationMenuLink asChild>

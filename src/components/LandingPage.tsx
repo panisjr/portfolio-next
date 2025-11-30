@@ -72,14 +72,14 @@ export default function LandingPage() {
         </div>
         <div className="w-full md:w-fit flex items-center justify-center md:justify-start gap-5 py-4">
           <PopUpOnLoad>
-            <button className="px-3 py-2 cursor-pointer bg-[#20b9f0] rounded-md text-white font-semibold hover:bg-transparent hover:text-[#081b2b] duration-200 border-[#20b9f0] border">
+            <button className="px-3 py-2 cursor-pointer bg-[#20b9f0] rounded-md text-white font-semibold hover:bg-transparent hover:text-[#081b2b] duration-200 border-[#20b9f0] border-2">
               Hire Me
             </button>
           </PopUpOnLoad>
           <PopUpOnLoad delay={0.3}>
             <button
               onClick={() => router.push("https://mail.google.com/")}
-              className="w-[120px] cursor-pointer h-[40px] border-2 border-[#20b9f0] rounded-md font-semibold hover:bg-[#20b9f0] hover:text-[#ededed] duration-200 hover:border-[#20b9f0]"
+              className="px-3 py-2 cursor-pointer border-2 border-[#20b9f0] rounded-md font-semibold hover:bg-[#20b9f0] hover:text-[#ededed] duration-200 hover:border-[#20b9f0]"
             >
               Contact Me
             </button>

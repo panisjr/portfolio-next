@@ -45,17 +45,18 @@ export default function LatestProjectsPage() {
   return (
     <>
       <section
-        className="w-full h-fit md:px-10 px-10 py-16 bg-gray-200 font-poppins"
+        className="w-full h-fit md:px-10 px-10 py-16 bg-[#303030] font-poppins"
         id="showOfMyLatestWork"
       >
         <div className="flex items-center justify-center gap-10 mb-10">
           <div className="border border-slate-400 w-full"></div>
-          <p className="text-lg font-semibold text-center text-nowrap text-[#081b2b]">
+          <p className="text-xl tracking-widest font-amarante font-semibold text-center text-nowrap text-[#dbdbdb]">
             SOME OF MY LATEST PROJECTS
           </p>
           <div className="border border-slate-400 w-full"></div>
         </div>
-        <div className="w-full flex flex-wrap items-center justify-center gap-6 text-[#081b2b]">
+        {/* text-[#081b2b] */}
+        <div className="w-full flex flex-wrap items-center justify-center gap-20 text-[#dbdbdb]">
           {latestProject.map((item, index) => (
             <SlideUp key={index} duration={0.5} delay={0.2}>
               <div
@@ -63,7 +64,7 @@ export default function LatestProjectsPage() {
                   setOpen(true);
                   setProjectView(item.projectName);
                 }}
-                className="w-[430px] md:w-[430px] h-[340px] md:h-[370px] bg-gray-100 shadow-lg rounded-lg flex flex-col items-center justify-center p-2.5 gap-2.5 hover:scale-105 hover:shadow-lg hover:shadow-[#303030] border hover:border-[#303030] transition-all duration-300 cursor-pointer"
+                className="w-[430px] md:w-[400px] h-[340px] md:h-[340px] bg-transparent shadow-lg rounded-lg flex flex-col items-center justify-center p-2.5 gap-2.5 hover:scale-105 hover:shadow-lg hover:shadow-[#20b9f0] border hover:border-[#20b9f0] transition-all duration-300 cursor-pointer"
               >
                 <div className="relative w-full h-full rounded-md">
                   <Image
