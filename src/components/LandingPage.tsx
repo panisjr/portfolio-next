@@ -24,7 +24,7 @@ export default function LandingPage() {
     <div id="landingPage" className="w-full flex md:flex-nowrap flex-wrap items-center justify-center bg-[#e5e7eb] text-[#303030] font-poppins overflow-x-hidden">
       <div className="w-full  px-28 ps-44 md:ps-48 py-16 flex flex-col items-start justify-start">
         <p className="text-3xl px-1">Hello, I&apos;m</p>
-        <p className="font-amarante text-8xl font-bold">Ramel Panis</p>
+        <p className="font-amarante text-7xl font-bold">Ramel Panis</p>
         <h1 className="px-1 text-3xl font-semibold text-nowrap">
           I am a{" "}
           <span style={{ color: "#20b9f0" }}>
@@ -89,7 +89,7 @@ export default function LandingPage() {
       <div className="w-fit md:w-full md:flex md:items-center md:justify-start justify-center md:ps-[150px]">
           <div className="relative w-[500px] md:w-[400px] h-[625px] rounded-md">
             <Image
-              src={"/assets/images/gradpic.png"}
+              src={"/assets/images/profile-picture.png"}
               alt="Graduation picture"
               fill
               sizes="w-[500px] h-[600px]"

@@ -1,6 +1,5 @@
 "use client";
 import React from "react";
-import Navbar from "@/components/Navbar";
 import ZoomInOnLoad from "@/components/animate/ZoomIn";
 import Image from "next/image";
 import GalleryCards from "@/components/cards/GalleryCards";
@@ -19,7 +18,6 @@ export default function Index() {
     <div className="w-full font-poppins tracking-wider" id="target-element">
       <div className="mx-auto">
         {/* Header */}
-        <Navbar />
         <div className="w-full flex items-center justify-center gap-5 px-10">
           <div className="w-[500px] h-52 text-[18px] font-light text-[#081b2b]">
             <SlideRight>

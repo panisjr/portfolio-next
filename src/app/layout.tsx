@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Amarante, Didact_Gothic, Rubik_80s_Fade } from "next/font/google";
 import "./globals.css";
+import Navbar from "@/components/Navbar";
 
 const poppins = Didact_Gothic({
   weight: "400",
@@ -29,7 +30,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${poppins.variable} ${amarante.variable}  ${rubik.variable} antialiased`}>
+      <body
+        className={`${poppins.variable} ${amarante.variable}  ${rubik.variable} antialiased`}
+      >
+        <Navbar />
         {children}
       </body>
     </html>

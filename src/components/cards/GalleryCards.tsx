@@ -27,6 +27,9 @@ const gallery: galleryTypes[] = [
   {
     image: `${loc}g9.jpg`,
   },
+  {
+    image: `${loc}g10.jpg`,
+  },
 ];
 export default function GalleryCards() {
   return (

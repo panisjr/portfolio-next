@@ -65,25 +65,25 @@ export default function Navbar() {
   const router = useRouter();
   return (
     <>
-      <div className="w-full flex flex-row items-center py-2 gap-4 px-20 font-poppins sticky top-0 bg-[#e5e7eb]/30 z-10 text-[#303030]">
+      <div className="w-full flex flex-row items-center justify-between py-2 gap-4 px-20 font-poppins sticky top-0 bg-[#e5e7eb]/30 z-10 text-[#303030]">
         <div className="bg-[#303030]/10 w-full absolute inset-0 backdrop-blur-sm z-[-10]"></div>
-        <div
-          onClick={() => router.push("/")}
-          className="flex flex-row items-center justify-center font-rubik text-[#303030] text-4xl cursor-pointer"
-        >
-          <div className="relative w-[70px] h-[70px]">
-            <Image
-              src={"/assets/images/nameLogo.png"}
-              alt="Logo name"
-              sizes="w-full h-full"
-              fill
-              priority
-              className="object-contain"
-            />
+        <div className="flex flex-row gap-2 h-fit justify-start items-center">
+          <div
+            onClick={() => router.push("/")}
+            className="flex flex-row items-center justify-center font-rubik text-[#303030] text-4xl cursor-pointer"
+          >
+            <div className="relative w-[70px] h-[70px]">
+              <Image
+                src={"/assets/images/nameLogo.png"}
+                alt="Logo name"
+                sizes="w-full h-full"
+                fill
+                priority
+                className="object-contain"
+              />
+            </div>
+            <p>ams</p>
           </div>
-          <p>ams</p>
-        </div>
-        <div className="flex flex-row gap-2 h-fit justify-start items-center w-full">
           <NavigationMenu viewport={false}>
             <NavigationMenuList className="flex flex-row gap-3">
               {/* Home */}
@@ -130,7 +130,9 @@ export default function Navbar() {
                       className="px-2 cursor-pointer hover:bg-slate-100 rounded-md flex flex-col items-start justify-center"
                       onClick={() => handleSmoothNavigate("showOfMyLatestWork")}
                     >
-                      <p className="text-[14px] font-bold">My Latest Projects</p>
+                      <p className="text-[14px] font-bold">
+                        My Latest Projects
+                      </p>
                       <p className="text-[14px] text-slate-500">
                         Take a little preview of my latest projects
                       </p>
@@ -224,8 +226,8 @@ export default function Navbar() {
                     <li>
                       <NavigationMenuLink asChild>
                         <Link href="https://symphonicsco.com/">
-                          Internship and currently working at Symphonics Co. Ltd. as a Front-End
-                          Developer using Nextjs
+                          Internship and currently working at Symphonics Co.
+                          Ltd. as a Front-End Developer using Nextjs
                         </Link>
                       </NavigationMenuLink>
                       {/* <NavigationMenuLink asChild>
@@ -266,13 +268,13 @@ export default function Navbar() {
           </NavigationMenu>
         </div>
         <div className="border-l-2 border-l-[#20b9f0] ps-4">
-          <a
+          {/* <a
             href="/assets/files/resume.pdf"
             download
-            className="bg-[#20b9f0] rounded-md px-3 py-2.5 whitespace-nowrap text-white font-poppins font-bold"
-          >
+            className="bg-[#20b9f0] rounded-md px-3 py-2 whitespace-nowrap text-white font-poppins font-bold"
+          > */}
             Download CV
-          </a>
+          {/* </a> */}
         </div>
       </div>
     </>
