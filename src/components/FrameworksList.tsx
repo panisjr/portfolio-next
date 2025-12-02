@@ -8,7 +8,7 @@ export default function FrameworksList() {
       className="border-b-2 border-b-gray-300 shadow-lg m-0"
       id="frameworksList"
     >
-      <div className=" bg-slate-100 text-[#081b2b] border-t-2 border-t-gray-300">
+      <div className=" bg-[#161616] text-[#fafafa] border-t-2 border-t-gray-300">
         <div className="flex items-center justify-center pt-5">
           <p className="font-amarante text-3xl font-bold text-nowrap tracking-widest">
             FRAMEWORKS

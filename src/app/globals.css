@@ -146,12 +146,60 @@
   mask:
     /* Bottom fade */ linear-gradient(
       to bottom,
-      black 80%,
+      #161616 70%,
       transparent 100%
     ),
-    linear-gradient(to left, black 80%, transparent 100%) 100% no-repeat,
-    linear-gradient(to right, black 80%, transparent 100%) 100% no-repeat;
+    linear-gradient(to left, #161616 70%, transparent 100%) 100% no-repeat,
+    linear-gradient(to right, #161616 70%, transparent 100%) 100% no-repeat;
 
   mask-composite: intersect;
   -webkit-mask-composite: intersect;
+}
+
+/* GLOBAL SCROLLBAR BASE */
+::-webkit-scrollbar {
+  background: transparent;
+}
+
+/* =============== Y-AXIS SCROLLBAR (vertical) =============== */
+::-webkit-scrollbar:vertical {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track:vertical {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb:vertical {
+  background: #aaa;
+  border-radius: 50px;
+  border-top: 4px solid transparent;
+  border-bottom: 4px solid transparent;
+  background-clip: padding-box;
+}
+
+::-webkit-scrollbar-thumb:vertical:hover {
+  background: #888;
+}
+
+
+/* =============== X-AXIS SCROLLBAR (horizontal) =============== */
+::-webkit-scrollbar:horizontal {
+  height: 8px;
+}
+
+::-webkit-scrollbar-track:horizontal {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb:horizontal {
+  background: #aaa;
+  border-radius: 50px;
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  background-clip: padding-box;
+}
+
+::-webkit-scrollbar-thumb:horizontal:hover {
+  background: #888;
 }

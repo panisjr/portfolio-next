@@ -45,7 +45,7 @@ export default function LatestProjectsPage() {
   return (
     <>
       <section
-        className="w-full h-fit md:px-10 px-10 py-16 bg-[#303030] font-poppins"
+        className="w-full h-fit md:px-10 px-10 py-16 bg-gradient-to-b from-[#161616] to-[#303030] font-poppins"
         id="showOfMyLatestWork"
       >
         <div className="flex items-center justify-center gap-10 mb-10">
@@ -56,7 +56,7 @@ export default function LatestProjectsPage() {
           <div className="border border-slate-400 w-full"></div>
         </div>
         {/* text-[#081b2b] */}
-        <div className="w-full flex flex-wrap items-center justify-center gap-20 text-[#dbdbdb]">
+        <div className="w-full flex flex-wrap items-center justify-center gap-20 text-[#dbdbdb] ">
           {latestProject.map((item, index) => (
             <SlideUp key={index} duration={0.5} delay={0.2}>
               <div

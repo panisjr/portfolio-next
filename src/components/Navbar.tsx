@@ -64,7 +64,7 @@ export default function Navbar() {
   };
   const router = useRouter();
   return (
-    <div className="sticky top-0 h-[80px] w-full flex flex-row items-center justify-between py-2 gap-4 px-20 font-poppins  bg-[#e5e7eb]/30 z-10 text-[#dedede]">
+    <div className="sticky top-0 h-[80px] w-full flex flex-row items-center justify-between py-2 gap-4 px-20 font-poppins  bg-[#e5e7eb]/30 z-10 text-[#fafafa]">
       <div className="bg-[#303030]/10 w-full absolute inset-0 backdrop-blur-sm z-[-10]"></div>
       <div className="flex flex-row gap-2 h-fit justify-start items-center">
         <div

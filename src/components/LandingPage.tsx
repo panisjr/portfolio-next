@@ -23,7 +23,7 @@ export default function LandingPage() {
   return (
     <div
       id="landingPage"
-      className="w-full h-screen flex md:flex-nowrap flex-wrap items-center justify-center bg-[#303030] text-[#fafafa] font-poppins overflow-x-hidden"
+      className="w-full h-screen flex md:flex-nowrap flex-wrap items-center justify-center bg-gradient-to-b from-[#303030] to-[#161616] text-[#fafafa] font-poppins overflow-x-hidden"
     >
       <div className="w-full  px-28 ps-44 md:ps-48 py-16 flex flex-col items-start justify-start">
         <p className="text-3xl px-1">Hello, I&apos;m</p>

@@ -15,11 +15,11 @@ gsap.registerPlugin(ScrollToPlugin);
 export default function Index() {
 
   return (
-    <div className="w-full font-poppins tracking-wider" id="target-element">
+    <div className="w-full font-poppins tracking-wider bg-[#303030] text-[#fafafa]" id="target-element">
       <div className="mx-auto">
         {/* Header */}
-        <div className="w-full flex items-center justify-center gap-5 px-10">
-          <div className="w-[500px] h-52 text-[18px] font-light text-[#081b2b]">
+        <div className="w-full h-screen flex items-center justify-center gap-5 px-10">
+          <div className="w-[500px] h-52 text-[18px] font-light">
             <SlideRight>
               <p>I am a Front-End Developer.</p>
               <p>
@@ -34,7 +34,7 @@ export default function Index() {
             </SlideRight>
           </div>
           <ZoomInOnLoad>
-            <div className="relative w-[500px] md:w-[400px] h-[600px] rounded-md">
+            <div className="relative w-[500px] md:w-[400px] h-[500px] rounded-md shadow-lg shadow-[#fafafa] border">
               <Image
                 src={"/assets/images/gallery/g1.jpg"}
                 alt="Graduation picture"
@@ -46,15 +46,15 @@ export default function Index() {
             </div>
           </ZoomInOnLoad>
         </div>
-        <div className="w-full h-fit flex flex-col items-center justify-center gap-5 p-10 ">
+        <div className="w-full h-fit flex flex-col items-center justify-center gap-5 p-10 bg-white text-[#161616]">
           <div>
             <p className="font-amarante text-3xl">Gallery</p>
           </div>
-          <div className="w-[1000px] overflow-x-auto">
+          <div className="w-full overflow-x-auto">
             <GalleryCards />
           </div>
         </div>
-        <div className="w-full min-h-auto border-2 border-gray-300 bg-gray-100 shadow-md">
+        <div className="w-full min-h-auto bg-[#303030] shadow-md">
           <div className="flex items-start p-10 justify-evenly">
             <div className="flex flex-col gap-10">
               <SlideRight>
@@ -83,7 +83,7 @@ export default function Index() {
             </div>
           </div>
         </div>
-        <div className="w-full h-fit p-10 font-light tracking-wider">
+        <div className="w-full h-fit p-10 font-light tracking-wider bg-gradient-to-t from-[#161616] to-[#303030]">
           <div className="flex items-start justify-center gap-15 font-light">
             <SlideUp>
               <div className="relative w-[300px] h-[400px]">
