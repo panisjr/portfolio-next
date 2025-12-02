@@ -21,7 +21,10 @@ export default function LandingPage() {
     }
   };
   return (
-    <div id="landingPage" className="w-full flex md:flex-nowrap flex-wrap items-center justify-center bg-[#e5e7eb] text-[#303030] font-poppins overflow-x-hidden">
+    <div
+      id="landingPage"
+      className="w-full h-screen flex md:flex-nowrap flex-wrap items-center justify-center bg-[#303030] text-[#fafafa] font-poppins overflow-x-hidden"
+    >
       <div className="w-full  px-28 ps-44 md:ps-48 py-16 flex flex-col items-start justify-start">
         <p className="text-3xl px-1">Hello, I&apos;m</p>
         <p className="font-amarante text-7xl font-bold">Ramel Panis</p>
@@ -50,7 +53,7 @@ export default function LandingPage() {
               onClick={() => socNav("facebook")}
               className="group bg-[#20b9f0] p-2 rounded-md cursor-pointer hover:-translate-y-1 transition-transform duration-300"
             >
-              <Facebook className="text-white"/>
+              <Facebook className="text-white" />
             </div>
           </PopUpOnLoad>
           <PopUpOnLoad delay={0.3}>
@@ -58,7 +61,7 @@ export default function LandingPage() {
               onClick={() => socNav("linkedin")}
               className="group bg-[#20b9f0] p-2 rounded-md cursor-pointer hover:-translate-y-1 transition-transform duration-200"
             >
-              <Linkedin className="text-white"/>
+              <Linkedin className="text-white" />
             </div>
           </PopUpOnLoad>
           <PopUpOnLoad delay={0.5}>
@@ -66,7 +69,7 @@ export default function LandingPage() {
               onClick={() => socNav("github")}
               className="group bg-[#20b9f0] p-2 rounded-md cursor-pointer hover:-translate-y-1 transition-transform duration-200"
             >
-              <Github className="text-white"/>
+              <Github className="text-white" />
             </div>
           </PopUpOnLoad>
         </div>
@@ -87,16 +90,27 @@ export default function LandingPage() {
         </div>
       </div>
       <div className="w-fit md:w-full md:flex md:items-center md:justify-start justify-center md:ps-[150px]">
-          <div className="relative w-[500px] md:w-[400px] h-[625px] rounded-md">
-            <Image
-              src={"/assets/images/profile-picture.png"}
-              alt="Graduation picture"
-              fill
-              sizes="w-[500px] h-[600px]"
-              className="md:object-cover object-cover rounded-md"
-              priority
-            />
-          </div>
+        {/* <div className="absolute inset-0 rounded-md blur-3xl scale-110 bg-[url('/assets/images/profile-picture.png')] bg-cover bg-center opacity-40"></div> */}
+        {/* <div className="relative w-[500px] md:w-[600px] h-[625px] rounded-md">
+          <Image
+            src={"/assets/images/profile-picture.png"}
+            alt="Graduation picture"
+            fill
+            sizes="w-[500px] h-[600px]"
+            className="md:object-cover object-cover rounded-md"
+            priority
+          />
+        </div> */}
+        <div className="relative w-[500px] md:w-[600px] h-[525px] rounded-md overflow-hidden">
+          <Image
+            src="/assets/images/profile-picture.png"
+            alt="Graduation picture"
+            fill
+            sizes="w-[500px] h-[600px]"
+            className="object-cover rounded-md blur-bottom-corners"
+            priority
+          />
+        </div>
       </div>
     </div>
   );

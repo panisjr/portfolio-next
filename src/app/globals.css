@@ -123,3 +123,35 @@
     @apply bg-background text-foreground;
   }
 }
+
+/* Other css */
+.blur-bottom {
+  -webkit-mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
+  mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
+}
+
+.blur-bottom-left {
+  mask:
+    /* bottom fade */ linear-gradient(
+      to bottom,
+      black 65%,
+      transparent 100%
+    ),
+    /* left fade */ linear-gradient(to left, black 65%, transparent 100%);
+
+  -webkit-mask-composite: intersect;
+  mask-composite: intersect;
+}
+.blur-bottom-corners {
+  mask:
+    /* Bottom fade */ linear-gradient(
+      to bottom,
+      black 80%,
+      transparent 100%
+    ),
+    linear-gradient(to left, black 80%, transparent 100%) 100% no-repeat,
+    linear-gradient(to right, black 80%, transparent 100%) 100% no-repeat;
+
+  mask-composite: intersect;
+  -webkit-mask-composite: intersect;
+}
