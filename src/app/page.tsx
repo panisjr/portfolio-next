@@ -7,7 +7,7 @@ import Footer from "@/components/Footer";
 
 export default function Home() {
   return (
-    <div id="home" className="w-[700px] md:w-full h-fit overflow-y-auto overflow-hidden">
+    <div id="home" className="w-[700px] md:w-full overflow-y-auto overflow-hidden">
       <div className="mx-auto overflow-auto">
         {/* Header */}
         {/* Main sections */}

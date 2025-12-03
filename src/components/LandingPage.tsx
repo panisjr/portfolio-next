@@ -23,12 +23,12 @@ export default function LandingPage() {
   return (
     <div
       id="landingPage"
-      className="w-full md:h- h-screen flex md:flex-nowrap flex-wrap items-center justify-center bg-gradient-to-b from-[#303030] to-[#161616] text-[#fafafa] font-poppins overflow-x-hidden"
+      className="md:w-full w-screen md:h-screen h-fit flex md:flex-nowrap flex-wrap-reverse items-center justify-center bg-gradient-to-b from-[#303030] to-[#161616] text-[#fafafa] font-poppins overflow-x-hidden"
     >
-      <div className="w-full px-28 ps-44 md:ps-48 py-16 flex flex-col items-start justify-start">
-        <p className="text-3xl px-1">Hello, I&apos;m</p>
-        <p className="font-amarante text-7xl font-bold">Ramel Panis</p>
-        <h1 className="px-1 text-3xl font-semibold text-nowrap">
+      <div className="md:w-full md:px-30 px-5 md:py-16 flex flex-col md:items-start items-center md:justify-start justify-center">
+        <p className="md:text-3xl text-2xl px-1">Hello, I&apos;m</p>
+        <p className="font-amarante md:text-7xl text-6xl font-bold">Ramel Panis</p>
+        <h1 className="px-1 md:text-3xl text-2xl font-semibold text-nowrap">
           I am a{" "}
           <span style={{ color: "#20b9f0" }}>
             <Typewriter
@@ -42,12 +42,12 @@ export default function LandingPage() {
             />
           </span>
         </h1>
-        <p className="px-1 text-lg w-full font-poppins">
+        <p className="px-1 md:text-lg text-sm md:w-full w-[320px] font-poppins md:text-start text-center">
           Fueled by curiosity and a strong desire for growth, I’m passionate
           about honing my technical abilities and staying ahead in the
           ever-evolving world of technology.
         </p>
-        <div className="px-1 w-full flex items-center justify-start gap-3 py-4">
+        <div className="px-1 w-full flex items-center md:justify-start justify-center gap-3 py-4">
           <PopUpOnLoad>
             <div
               onClick={() => socNav("facebook")}
@@ -73,7 +73,7 @@ export default function LandingPage() {
             </div>
           </PopUpOnLoad>
         </div>
-        <div className="w-full md:w-fit flex items-center justify-center md:justify-start gap-5 py-4">
+        <div className="w-fit flex items-center justify-center md:justify-start gap-5 py-4">
           <PopUpOnLoad>
             <button className="px-3 py-2 cursor-pointer bg-[#20b9f0] rounded-md text-white font-semibold hover:bg-transparent hover:text-[#081b2b] duration-200 border-[#20b9f0] border-2">
               Hire Me
@@ -89,13 +89,13 @@ export default function LandingPage() {
           </PopUpOnLoad>
         </div>
       </div>
-      <div className="w-fit md:w-full md:flex md:items-center md:justify-start justify-center md:ps-[150px]">
-        <div className="relative w-[500px] md:w-[600px] h-[525px] rounded-md overflow-hidden">
+      <div className="w-full md:w-full flex items-center justify-start md:ps-[150px] md:pt-0 pt-25">
+        <div className="relative w-[400px] md:w-[600px] md:h-[525px] h-[322px] rounded-md overflow-hidden">
           <Image
             src="/assets/images/profile-picture.png"
             alt="Graduation picture"
             fill
-            sizes="w-[500px] h-[600px]"
+            sizes="w-[400px] md:w-[600px] md:h-[525px] h-[322px]"
             className="object-cover rounded-md blur-bottom-corners"
             priority
           />

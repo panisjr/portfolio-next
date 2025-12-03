@@ -92,6 +92,7 @@ export default function Navbar() {
     <>
       {isWidth ? (
         <div className="sticky top-0 w-full h-fit flex flex-row items-center py-2 gap-4 px-4 md:px-20 font-poppins bg-[#e5e7eb]/30 z-10 text-[#fafafa]">
+          <div className="w-full bg-[#303030]/10 absolute inset-0 backdrop-blur-sm z-[-10]"></div>
           <Accordion
             type="single"
             collapsible
@@ -127,7 +128,6 @@ export default function Navbar() {
               </div>
 
               <AccordionContent className="w-full flex flex-col items-center justify-center gap-4 text-balance">
-                <div className="w-full bg-[#303030]/10 absolute inset-0 backdrop-blur-sm z-[-10]"></div>
                 <div className="flex flex-col items-start gap-2 h-fit justify-center">
                   <NavigationMenu viewport={false}>
                     <NavigationMenuList className="flex flex-col items-start justify-center gap-3">
