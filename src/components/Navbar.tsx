@@ -69,7 +69,7 @@ export default function Navbar() {
       <div className="flex flex-row gap-2 h-fit justify-start items-center">
         <div
           onClick={() => router.push("/")}
-          className="flex flex-row items-center justify-center font-rubik text-[#303030] text-4xl cursor-pointer"
+          className="flex flex-row items-center justify-center font-rubik text-[#fafafa] text-4xl cursor-pointer"
         >
           <div className="relative w-[70px] h-[70px]">
             <Image
