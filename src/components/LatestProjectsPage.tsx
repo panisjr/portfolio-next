@@ -45,7 +45,7 @@ export default function LatestProjectsPage() {
   return (
     <>
       <section
-        className="w-full h-fit md:px-10 px-10 py-16 bg-gradient-to-b from-[#161616] to-[#303030] font-poppins"
+        className="md:w-full w-screen h-fit md:px-10 px-10 py-16 bg-gradient-to-b from-[#161616] to-[#303030] font-poppins"
         id="showOfMyLatestWork"
       >
         <div className="flex items-center justify-center gap-10 mb-10">
@@ -64,7 +64,7 @@ export default function LatestProjectsPage() {
                   setOpen(true);
                   setProjectView(item.projectName);
                 }}
-                className="w-[430px] md:w-[400px] h-[340px] md:h-[340px] bg-transparent shadow-lg rounded-lg flex flex-col items-center justify-center p-2.5 gap-2.5 hover:scale-105 hover:shadow-lg hover:shadow-[#20b9f0] border hover:border-[#20b9f0] transition-all duration-300 cursor-pointer"
+                className="w-full md:w-[400px] h-[340px] md:h-[340px] bg-transparent shadow-lg rounded-lg flex flex-col items-center justify-center p-2.5 gap-2.5 hover:scale-105 hover:shadow-lg hover:shadow-[#20b9f0] border hover:border-[#20b9f0] transition-all duration-300 cursor-pointer"
               >
                 <div className="relative w-full h-full rounded-md">
                   <Image

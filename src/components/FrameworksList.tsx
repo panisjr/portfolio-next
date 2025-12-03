@@ -5,7 +5,7 @@ export default function FrameworksList() {
   const cards = Array.from({ length: 5 });
   return (
     <div
-      className="border-b-2 border-b-gray-300 shadow-lg m-0"
+      className="md:w-full w-screen border-b-2 border-b-gray-300 shadow-lg m-0"
       id="frameworksList"
     >
       <div className=" bg-[#161616] text-[#fafafa] border-t-2 border-t-gray-300">

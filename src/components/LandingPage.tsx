@@ -90,7 +90,7 @@ export default function LandingPage() {
         </div>
       </div>
       <div className="w-full md:w-full flex items-center justify-start md:ps-[150px] md:pt-0 pt-25">
-        <div className="relative w-[400px] md:w-[600px] md:h-[525px] h-[322px] rounded-md overflow-hidden">
+        <div className="relative w-[400px] md:w-[600px] md:h-[525px] h-[250px] rounded-md overflow-hidden">
           <Image
             src="/assets/images/profile-picture.png"
             alt="Graduation picture"
