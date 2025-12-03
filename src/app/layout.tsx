@@ -33,8 +33,8 @@ export default function RootLayout({
       <body
         className={`${poppins.variable} ${amarante.variable}  ${rubik.variable} antialiased`}
       >
-        <div className="relative">
-          <div className="absolute inset-0">
+        <div className="relative w-full h-screen overflow-x-hidden">
+          <div className="absolute inset-0 w-full">
             <Navbar />
           </div>
           {children}

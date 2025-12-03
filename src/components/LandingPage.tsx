@@ -23,9 +23,9 @@ export default function LandingPage() {
   return (
     <div
       id="landingPage"
-      className="w-full h-screen flex md:flex-nowrap flex-wrap items-center justify-center bg-gradient-to-b from-[#303030] to-[#161616] text-[#fafafa] font-poppins overflow-x-hidden"
+      className="w-full md:h- h-screen flex md:flex-nowrap flex-wrap items-center justify-center bg-gradient-to-b from-[#303030] to-[#161616] text-[#fafafa] font-poppins overflow-x-hidden"
     >
-      <div className="w-full  px-28 ps-44 md:ps-48 py-16 flex flex-col items-start justify-start">
+      <div className="w-full px-28 ps-44 md:ps-48 py-16 flex flex-col items-start justify-start">
         <p className="text-3xl px-1">Hello, I&apos;m</p>
         <p className="font-amarante text-7xl font-bold">Ramel Panis</p>
         <h1 className="px-1 text-3xl font-semibold text-nowrap">
@@ -90,17 +90,6 @@ export default function LandingPage() {
         </div>
       </div>
       <div className="w-fit md:w-full md:flex md:items-center md:justify-start justify-center md:ps-[150px]">
-        {/* <div className="absolute inset-0 rounded-md blur-3xl scale-110 bg-[url('/assets/images/profile-picture.png')] bg-cover bg-center opacity-40"></div> */}
-        {/* <div className="relative w-[500px] md:w-[600px] h-[625px] rounded-md">
-          <Image
-            src={"/assets/images/profile-picture.png"}
-            alt="Graduation picture"
-            fill
-            sizes="w-[500px] h-[600px]"
-            className="md:object-cover object-cover rounded-md"
-            priority
-          />
-        </div> */}
         <div className="relative w-[500px] md:w-[600px] h-[525px] rounded-md overflow-hidden">
           <Image
             src="/assets/images/profile-picture.png"
