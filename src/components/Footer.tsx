@@ -20,10 +20,10 @@ export default function Footer() {
   return (
     <footer className="w-full h-[480px] bg-[#e5e7eb] text-white">
       {/* top-left,top-right,bottom-right, bottom-left, top-right */}
-      <div className="md:w-full w-screen md:h-full bg-[#404040] [clip-path:polygon(100%_0%,100%_0%,100%_100%,0%_100%,0%_110px)] pt-[160px] px-[200px] flex flex-col justify-around">
+      <div className="md:w-full w-screen md:h-full bg-[#404040] [clip-path:polygon(100%_0%,100%_0%,100%_100%,0%_100%,0%_110px)] pt-[160px] md:px-[200px] flex flex-col justify-around">
         <div className="w-full flex md:flex-row flex-col items-center justify-center">
           <div
-            className="w-full flex flex-row items-center justify-start gap-5"
+            className="w-full flex flex-row items-center md:justify-start justify-center gap-5"
             onClick={() =>
               gsap.to(window, {
                 scrollTo: "#home",
@@ -32,8 +32,8 @@ export default function Footer() {
               })
             }
           >
-            <div className="flex flex-row items-center justify-center font-rubik text-[#dbdbdb] text-4xl cursor-pointer">
-              <div className="relative w-[50px] h-[50px]">
+            <div className="flex flex-row items-center justify-center font-rubik text-[#dbdbdb] md:text-4xl text-3xl cursor-pointer">
+              <div className="relative w-[60px] h-[60px]">
                 <Image
                   src={"/assets/images/nameLogo.png"}
                   alt="Logo name"
@@ -56,8 +56,8 @@ export default function Footer() {
             <Linkedin className="cursor-pointer hover:text-[#dbdbdb] duration-100" />
           </div>
         </div>
-        <div className="w-full py-8 flex md:flex-row flex-col">
-          <div className="w-full text-[#858585]">
+        <div className="w-full py-8 flex md:flex-row flex-col md:gap-0 gap-5">
+          <div className="w-full text-[#858585] md:px-0 px-20">
             <p className="font-medium text-white">Quick Links</p>
             <div className="flex items-center gap-20 text-[14px]">
               <div className="flex items-center hover:text-[#dbdbdb] cursor-pointer duration-100">
@@ -81,7 +81,7 @@ export default function Footer() {
             </div>
           </div>
           <div className="w-full">
-            <div className="w-full text-[#858585]">
+            <div className="w-full text-[#858585] md:px-0 px-20">
               <p className="font-medium text-white">Contact</p>
               <div className="flex items-center gap-3 text-[14px] cursor-pointer hover:text-[#dbdbdb] duration-100">
                 <MapPin className="w-4" />
@@ -98,7 +98,7 @@ export default function Footer() {
             </div>
           </div>
         </div>
-        <div className="w-full text-[#858585] flex flex-row">
+        <div className="w-full text-[#858585] flex flex-row md:justify-start justify-center">
           <Copyright className="w-4" /> 2025. All rights reserved.
         </div>
       </div>

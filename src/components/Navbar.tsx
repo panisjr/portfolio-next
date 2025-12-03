@@ -108,7 +108,7 @@ export default function Navbar() {
                   onClick={() => router.push("/")}
                   className="flex flex-row items-center justify-center font-rubik text-[#fafafa] text-3xl cursor-pointer"
                 >
-                  <div className="relative w-[50px] h-[50px]">
+                  <div className="relative w-[60px] h-[60px]">
                     <Image
                       src={"/assets/images/nameLogo.png"}
                       alt="Logo name"
