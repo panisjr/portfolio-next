@@ -11,8 +11,7 @@ import {
 import { AlignJustify, Mail, Phone } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import { usePathname, useRouter } from "next/navigation";
-import { div, p } from "framer-motion/client";
+import { useRouter } from "next/navigation";
 import {
   Accordion,
   AccordionContent,
@@ -64,11 +63,7 @@ function ListItem({
 
 export default function Navbar() {
   const router = useRouter();
-  const pathname = usePathname();
-  const isActive = (path: string) => pathname === path;
   const [isWidth, setIsWidth] = useState<boolean | null>(null);
-  const triggerButtonCSS =
-    "!bg-transparent !hover:bg-transparent !m-0 !shadow-none !rounded-none !cursor-pointer !text-[#0D3531]";
   const handleSmoothNavigate = (id: string) => {
     const el = document.getElementById(id);
     if (el) {
