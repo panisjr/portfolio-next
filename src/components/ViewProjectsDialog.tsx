@@ -6,7 +6,12 @@ import {
   DialogHeader,
   DialogTitle,
 } from "@/components/ui/dialog";
-import { X } from "lucide-react";
+import {
+  ChevronRight,
+  CircleChevronRightIcon,
+  MoveUpRight,
+  X,
+} from "lucide-react";
 import Image from "next/image";
 import { gsap } from "gsap";
 import { ScrollToPlugin } from "gsap/ScrollToPlugin";
@@ -19,10 +24,32 @@ export interface viewProjectTypes {
   description: string;
   image: string[];
   framework: { icon: string; name: string }[];
+  link?: string;
 }
 
 const loc = "/assets/images";
 const latestProject: viewProjectTypes[] = [
+  {
+    projectName: "SALIGAN - nextjs, mapbox, supabase",
+    description:
+      "The System for Administering Local Information & Governance At the Neighborhood is a modern solution designed to streamline barangay operations, enhance transparency, and bring local services closer to residents. From managing records and community programs to improving communication between officials and citizens, our platform empowers neighborhood leaders with the tools they need to serve more efficiently and responsively.",
+    image: [
+      `${loc}/projects/saligan/saligan.png`,
+      `${loc}/projects/saligan/s1.png`,
+      `${loc}/projects/saligan/s2.png`,
+      `${loc}/projects/saligan/s3.png`,
+      `${loc}/projects/saligan/s4.png`,
+      `${loc}/projects/saligan/s5.png`,
+      `${loc}/projects/saligan/s6.png`,
+      `${loc}/projects/saligan/s7.png`,
+    ],
+    framework: [
+      { icon: `${loc}/nextjs.png`, name: "Nextjs" },
+      { icon: `${loc}/mapbox-logo.png`, name: "Mapbox" },
+      { icon: `${loc}/supabase-logo.png`, name: "Supabase" },
+    ],
+    link: "https://saligan.vercel.app/",
+  },
   {
     projectName: "DRSchecker - nextjs, gemini api",
     description:
@@ -118,8 +145,24 @@ export function ViewProjectsDialog({
                 >
                   <X />
                 </DialogClose>
-                <DialogTitle>{item.projectName}</DialogTitle>
-                <div className="text-[#081b2b] w-full h-[140px] flex items-center justify-center">
+                <div className="flex flex-row items-center gap-3">
+                  <DialogTitle>{item.projectName}</DialogTitle>
+                  {item.link && (
+                    <a
+                      href={item.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex flex-row items-center font-lexend border border-blue-400 rounded-full w-fit px-3 py-1 bg-blue-400 text-white hover:bg-white hover:text-blue-400"
+                    >
+                      Visit
+                      <div className="pt-1">
+                        <ChevronRight className="w-4 h-4" />
+                      </div>
+                    </a>
+                  )}
+                </div>
+
+                <div className="text-[#081b2b] w-full h-fit min-h-[140px] flex items-center justify-center">
                   <div className="w-full h-full">
                     <p>Description:</p>
                     <p className="px-2.5 font-light">{item.description}</p>
@@ -150,7 +193,7 @@ export function ViewProjectsDialog({
                 </div>
               </DialogHeader>
 
-              <div className="overflow-y-auto h-[400px]">
+              <div className="overflow-y-auto max-h-[400px]">
                 {item.image.map((i, idx) => (
                   <div key={idx} className="flex flex-wrap items-center">
                     <div className="w-[500px] h-[500px] flex-1 space-y-2 gap-2 rounded-md px-3 py-10">
@@ -161,7 +204,7 @@ export function ViewProjectsDialog({
                           fill
                           priority
                           sizes="(max-width: 500px) 100vw, 500px"
-                          className="object-cover rounded-md shadow-md"
+                          className="object-contain rounded-md shadow-md"
                         />
                       </div>
                     </div>

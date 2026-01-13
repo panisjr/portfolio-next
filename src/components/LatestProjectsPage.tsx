@@ -12,10 +12,10 @@ export interface latestProjectTypes {
 }
 const latestProject: latestProjectTypes[] = [
   {
-    projectName: "SALIGAN - nextjs, mapbox",
+    projectName: "SALIGAN - nextjs, mapbox, supabase",
     date: "2025-present",
     description:
-      "A centralized platform designed to simplify barangay management.",
+      "Empowering communities through smarter local governance.",
     image: "/assets/images/projects/saligan/saligan.png",
   },
   {
