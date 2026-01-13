@@ -145,16 +145,16 @@ export default function Navbar() {
                               <NavigationMenuLink asChild>
                                 <div
                                   onClick={() =>
-                                    router.push(
-                                      "https://drschecker.vercel.app/"
-                                    )
+                                    router.push("https://saligan.vercel.app/")
                                   }
                                   className="cursor-pointer from-muted/50 to-muted flex h-full w-full flex-col justify-end rounded-md bg-linear-to-b p-6 no-underline outline-hidden select-none focus:shadow-md"
                                 >
                                   <div className="relative w-[50px] h-[50px]">
                                     <Image
-                                      src={"/assets/images/ai.png"}
-                                      alt="Depression rating scale image"
+                                      src={
+                                        "/assets/images/projects/saligan/saligan.png"
+                                      }
+                                      alt="Saligan image"
                                       fill
                                       sizes="w-[50px] h-[50px]"
                                     />
@@ -163,9 +163,8 @@ export default function Navbar() {
                                     latest project
                                   </div>
                                   <p className="text-muted-foreground text-sm leading-tight">
-                                    Use the Depression Rating Scale to assess
-                                    your stress level and support your physical
-                                    and mental well-being.
+                                    Empowering communities through smarter local
+                                    governance.
                                   </p>
                                 </div>
                               </NavigationMenuLink>
@@ -380,25 +379,27 @@ export default function Navbar() {
                         <NavigationMenuLink asChild>
                           <div
                             onClick={() =>
-                              router.push("https://drschecker.vercel.app/")
+                              router.push("https://saligan.vercel.app/")
                             }
                             className="cursor-pointer from-muted/50 to-muted flex h-full w-full flex-col justify-end rounded-md bg-linear-to-b p-6 no-underline outline-hidden select-none focus:shadow-md"
                           >
-                            <div className="relative w-[50px] h-[50px]">
+                            <div className="relative w-[150px] h-[50px] rounded-md bg-white">
                               <Image
-                                src={"/assets/images/ai.png"}
-                                alt="Depression rating scale image"
+                                src={
+                                  "/assets/images/projects/saligan/saligan-logo.png"
+                                }
+                                alt="Saligan logo"
                                 fill
-                                sizes="w-[50px] h-[50px]"
+                                sizes="w-[150px] h-[50px]"
+                                className="object-contain"
                               />
                             </div>
                             <div className="mt-4 mb-2 text-lg font-bold font-poppins">
                               latest project
                             </div>
                             <p className="text-muted-foreground text-sm leading-tight">
-                              Use the Depression Rating Scale to assess your
-                              stress level and support your physical and mental
-                              well-being.
+                              Empowering communities through smarter local
+                              governance.
                             </p>
                           </div>
                         </NavigationMenuLink>
