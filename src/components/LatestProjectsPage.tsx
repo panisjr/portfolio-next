@@ -12,6 +12,13 @@ export interface latestProjectTypes {
 }
 const latestProject: latestProjectTypes[] = [
   {
+    projectName: "SALIGAN - nextjs, mapbox",
+    date: "2025-present",
+    description:
+      "A centralized platform designed to simplify barangay management.",
+    image: "/assets/images/projects/saligan/saligan.png",
+  },
+  {
     projectName: "DRSchecker - nextjs, gemini api",
     date: "2024-2025",
     description:
