@@ -8,8 +8,6 @@ import {
 } from "@/components/ui/dialog";
 import {
   ChevronRight,
-  CircleChevronRightIcon,
-  MoveUpRight,
   X,
 } from "lucide-react";
 import Image from "next/image";
