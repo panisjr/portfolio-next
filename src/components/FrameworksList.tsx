@@ -16,25 +16,95 @@ import Image from "next/image";
 // Framework data with categories
 const frameworks = {
   frontend: [
-    { name: "React", icon: "/assets/icons/react.svg", color: "#61DAFB", level: 90 },
-    { name: "Next.js", icon: "/assets/icons/nextjs.svg", color: "#ffffff", level: 85 },
-    { name: "TypeScript", icon: "/assets/icons/typescript.svg", color: "#3178C6", level: 80 },
-    { name: "Tailwind CSS", icon: "/assets/icons/tailwind.svg", color: "#06B6D4", level: 95 },
-    { name: "Vue.js", icon: "/assets/icons/vue.svg", color: "#4FC08D", level: 70 },
+    {
+      name: "React",
+      icon: "/assets/icons/react.svg",
+      color: "#61DAFB",
+      level: 90,
+    },
+    {
+      name: "Next.js",
+      icon: "/assets/icons/nextjs.svg",
+      color: "#ffffff",
+      level: 85,
+    },
+    {
+      name: "TypeScript",
+      icon: "/assets/icons/typescript.svg",
+      color: "#3178C6",
+      level: 80,
+    },
+    {
+      name: "Tailwind CSS",
+      icon: "/assets/icons/tailwind.svg",
+      color: "#06B6D4",
+      level: 95,
+    },
+    {
+      name: "Vue.js",
+      icon: "/assets/icons/vue.svg",
+      color: "#4FC08D",
+      level: 70,
+    },
   ],
   backend: [
-    { name: "Node.js", icon: "/assets/icons/nodejs.svg", color: "#339933", level: 80 },
-    { name: "Express", icon: "/assets/icons/express.svg", color: "#ffffff", level: 75 },
-    { name: "Python", icon: "/assets/icons/python.svg", color: "#3776AB", level: 70 },
-    { name: "PostgreSQL", icon: "/assets/icons/postgresql.svg", color: "#4169E1", level: 75 },
-    { name: "MongoDB", icon: "/assets/icons/mongodb.svg", color: "#47A248", level: 80 },
+    {
+      name: "Node.js",
+      icon: "/assets/icons/nodejs.svg",
+      color: "#339933",
+      level: 80,
+    },
+    {
+      name: "Express",
+      icon: "/assets/icons/express.svg",
+      color: "#ffffff",
+      level: 75,
+    },
+    {
+      name: "Python",
+      icon: "/assets/icons/python.svg",
+      color: "#3776AB",
+      level: 70,
+    },
+    {
+      name: "PostgreSQL",
+      icon: "/assets/icons/postgresql.svg",
+      color: "#4169E1",
+      level: 75,
+    },
+    {
+      name: "MongoDB",
+      icon: "/assets/icons/mongodb.svg",
+      color: "#47A248",
+      level: 80,
+    },
   ],
   tools: [
     { name: "Git", icon: "/assets/icons/git.svg", color: "#F05032", level: 85 },
-    { name: "Docker", icon: "/assets/icons/docker.svg", color: "#2496ED", level: 65 },
-    { name: "Figma", icon: "/assets/icons/figma.svg", color: "#F24E1E", level: 80 },
-    { name: "VS Code", icon: "/assets/icons/vscode.svg", color: "#007ACC", level: 95 },
-    { name: "Vercel", icon: "/assets/icons/vercel.svg", color: "#ffffff", level: 85 },
+    {
+      name: "Docker",
+      icon: "/assets/icons/docker.svg",
+      color: "#2496ED",
+      level: 65,
+    },
+    {
+      name: "Figma",
+      icon: "/assets/icons/figma.svg",
+      color: "#F24E1E",
+      level: 80,
+    },
+    {
+      name: "VS Code",
+      icon: "/assets/icons/vscode.svg",
+      color: "#007ACC",
+      level: 95,
+    },
+    {
+      name: "Vercel",
+      icon: "/assets/icons/vercel.svg",
+      color: "#ffffff",
+      level: 85,
+    },
   ],
 };
 
@@ -46,8 +116,18 @@ const allFrameworks = [
 
 const categories = [
   { id: "all", name: "All", icon: Layers, count: allFrameworks.length },
-  { id: "frontend", name: "Frontend", icon: Palette, count: frameworks.frontend.length },
-  { id: "backend", name: "Backend", icon: Database, count: frameworks.backend.length },
+  {
+    id: "frontend",
+    name: "Frontend",
+    icon: Palette,
+    count: frameworks.frontend.length,
+  },
+  {
+    id: "backend",
+    name: "Backend",
+    icon: Database,
+    count: frameworks.backend.length,
+  },
   { id: "tools", name: "Tools", icon: Wrench, count: frameworks.tools.length },
 ];
 
@@ -70,7 +150,7 @@ export default function FrameworksList() {
         {/* Gradient Orbs */}
         <div className="absolute top-0 left-1/4 w-96 h-96 bg-[#20b9f0]/10 rounded-full blur-[150px]" />
         <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-purple-500/10 rounded-full blur-[150px]" />
-        
+
         {/* Grid Pattern */}
         <div
           className="absolute inset-0 opacity-[0.02]"
@@ -121,7 +201,9 @@ export default function FrameworksList() {
             className="inline-flex items-center gap-2 px-4 py-2 mb-6 bg-[#20b9f0]/10 border border-[#20b9f0]/20 rounded-full backdrop-blur-sm"
           >
             <Code2 className="w-4 h-4 text-[#20b9f0]" />
-            <span className="text-sm text-[#20b9f0] font-medium">Tech Stack</span>
+            <span className="text-sm text-[#20b9f0] font-medium">
+              Tech Stack
+            </span>
           </motion.div>
 
           {/* Title */}
@@ -134,7 +216,8 @@ export default function FrameworksList() {
 
           {/* Subtitle */}
           <p className="text-gray-400 text-lg max-w-2xl mx-auto">
-            Tools and technologies I use to bring ideas to life. Constantly learning and exploring new possibilities.
+            Tools and technologies I use to bring ideas to life. Constantly
+            learning and exploring new possibilities.
           </p>
         </motion.div>
 
@@ -162,9 +245,7 @@ export default function FrameworksList() {
               <span>{category.name}</span>
               <span
                 className={`text-xs px-2 py-0.5 rounded-full ${
-                  activeCategory === category.id
-                    ? "bg-white/20"
-                    : "bg-white/5"
+                  activeCategory === category.id ? "bg-white/20" : "bg-white/5"
                 }`}
               >
                 {category.count}
@@ -199,16 +280,18 @@ export default function FrameworksList() {
 
           {/* Second Row - Reverse Direction */}
           <div className="mt-6">
-            <AutoScrollCards duration={60} reverse>
-              {[...allFrameworks.reverse(), ...allFrameworks].map((framework, index) => (
-                <FrameworkCard
-                  key={`${framework.name}-reverse-${index}`}
-                  framework={framework}
-                  isHovered={hoveredFramework === framework.name}
-                  onHover={() => setHoveredFramework(framework.name)}
-                  onLeave={() => setHoveredFramework(null)}
-                />
-              ))}
+            <AutoScrollCards duration={60}>
+              {[...allFrameworks.reverse(), ...allFrameworks].map(
+                (framework, index) => (
+                  <FrameworkCard
+                    key={`${framework.name}-reverse-${index}`}
+                    framework={framework}
+                    isHovered={hoveredFramework === framework.name}
+                    onHover={() => setHoveredFramework(framework.name)}
+                    onLeave={() => setHoveredFramework(null)}
+                  />
+                )
+              )}
             </AutoScrollCards>
           </div>
         </motion.div>
@@ -258,9 +341,12 @@ export default function FrameworksList() {
             <div className="w-16 h-16 rounded-2xl bg-[#20b9f0]/20 flex items-center justify-center mb-4">
               <Code2 className="w-8 h-8 text-[#20b9f0]" />
             </div>
-            <h3 className="text-xl font-bold text-white mb-2">Always Learning</h3>
+            <h3 className="text-xl font-bold text-white mb-2">
+              Always Learning
+            </h3>
             <p className="text-gray-400 mb-6 max-w-md">
-              Technology evolves fast. I&#39;m committed to continuous learning and staying updated with the latest trends.
+              Technology evolves fast. I&#39;m committed to continuous learning
+              and staying updated with the latest trends.
             </p>
             <motion.button
               whileHover={{ scale: 1.05 }}
@@ -296,7 +382,9 @@ function FrameworkCard({
       whileHover={{ scale: 1.05, y: -5 }}
       className="group relative flex items-center gap-4 px-6 py-4 mx-3 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-sm hover:bg-white/10 hover:border-[#20b9f0]/30 transition-all duration-300 cursor-pointer min-w-[200px]"
       style={{
-        boxShadow: isHovered ? `0 10px 40px -10px ${framework.color}40` : "none",
+        boxShadow: isHovered
+          ? `0 10px 40px -10px ${framework.color}40`
+          : "none",
       }}
     >
       {/* Glow Effect */}
@@ -429,9 +517,7 @@ function FrameworkDetailCard({
                 <div
                   key={i}
                   className={`w-1.5 h-1.5 rounded-full transition-colors ${
-                    i < Math.floor(framework.level / 20)
-                      ? ""
-                      : "bg-white/10"
+                    i < Math.floor(framework.level / 20) ? "" : "bg-white/10"
                   }`}
                   style={{
                     backgroundColor:
