@@ -2,7 +2,15 @@
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
 import { Typewriter } from "react-simple-typewriter";
-import { Facebook, Github, Linkedin, Download, Mail, ChevronDown, Sparkles } from "lucide-react";
+import {
+  Facebook,
+  Github,
+  Linkedin,
+  Download,
+  Mail,
+  ChevronDown,
+  Sparkles,
+} from "lucide-react";
 import PopUpOnLoad from "./animate/PopUpOnLoad";
 
 export default function LandingPage() {
@@ -41,29 +49,30 @@ export default function LandingPage() {
         <div className="absolute top-20 left-10 w-72 h-72 bg-[#20b9f0]/20 rounded-full blur-[100px] animate-pulse" />
         <div className="absolute bottom-20 right-10 w-96 h-96 bg-purple-500/10 rounded-full blur-[120px] animate-pulse delay-1000" />
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#20b9f0]/5 rounded-full blur-[150px]" />
-        
+
         {/* Grid Pattern */}
-        <div 
+        <div
           className="absolute inset-0 opacity-[0.02]"
           style={{
             backgroundImage: `linear-gradient(#fff 1px, transparent 1px), linear-gradient(90deg, #fff 1px, transparent 1px)`,
-            backgroundSize: '50px 50px'
+            backgroundSize: "50px 50px",
           }}
         />
-        
+
         {/* Floating Particles */}
-        {mounted && [...Array(20)].map((_, i) => (
-          <div
-            key={i}
-            className="absolute w-1 h-1 bg-[#20b9f0]/30 rounded-full animate-float"
-            style={{
-              left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 100}%`,
-              animationDelay: `${Math.random() * 5}s`,
-              animationDuration: `${3 + Math.random() * 4}s`,
-            }}
-          />
-        ))}
+        {mounted &&
+          [...Array(20)].map((_, i) => (
+            <div
+              key={i}
+              className="absolute w-1 h-1 bg-[#20b9f0]/30 rounded-full animate-float"
+              style={{
+                left: `${Math.random() * 100}%`,
+                top: `${Math.random() * 100}%`,
+                animationDelay: `${Math.random() * 5}s`,
+                animationDuration: `${3 + Math.random() * 4}s`,
+              }}
+            />
+          ))}
       </div>
 
       {/* Main Content */}
@@ -75,7 +84,9 @@ export default function LandingPage() {
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
               <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
             </span>
-            <span className="text-sm text-gray-300">Available for opportunities</span>
+            <span className="text-sm text-gray-300">
+              Available for opportunities
+            </span>
           </div>
         </PopUpOnLoad>
 
@@ -85,7 +96,7 @@ export default function LandingPage() {
             Hello, I&apos;m
           </p>
         </PopUpOnLoad>
-        
+
         <PopUpOnLoad delay={0.2}>
           <h1 className="font-amarante md:text-7xl text-5xl font-bold bg-gradient-to-r from-white via-[#20b9f0] to-white bg-clip-text text-transparent mb-4 leading-tight">
             Ramel Panis
@@ -100,7 +111,12 @@ export default function LandingPage() {
               I am a{" "}
               <span className="text-[#20b9f0] font-semibold">
                 <Typewriter
-                  words={["Web Developer", "UI Designer", "Problem Solver", "Lifelong Learner"]}
+                  words={[
+                    "Web Developer",
+                    "UI Designer",
+                    "Problem Solver",
+                    "Lifelong Learner",
+                  ]}
                   loop={true}
                   cursor
                   cursorStyle="_"
@@ -116,9 +132,9 @@ export default function LandingPage() {
         {/* Description */}
         <PopUpOnLoad delay={0.4}>
           <p className="md:text-lg text-base text-gray-400 md:w-[500px] w-full max-w-[400px] md:text-start text-center leading-relaxed mb-8">
-            Fueled by curiosity and a strong desire for growth, I&#39;m passionate
-            about crafting beautiful digital experiences and staying ahead in the
-            ever-evolving world of technology.
+            Fueled by curiosity and a strong desire for growth, I&#39;m
+            passionate about crafting beautiful digital experiences and staying
+            ahead in the ever-evolving world of technology.
           </p>
         </PopUpOnLoad>
 
@@ -146,21 +162,32 @@ export default function LandingPage() {
         {/* CTA Buttons */}
         <div className="flex items-center md:justify-start justify-center gap-4 flex-wrap">
           <PopUpOnLoad delay={0.8}>
-            <button className="group relative px-6 py-3 bg-gradient-to-r from-[#20b9f0] to-[#0ea5e9] rounded-xl 
-                             text-white font-semibold overflow-hidden transition-all duration-300 
-                             hover:shadow-xl hover:shadow-[#20b9f0]/30 hover:-translate-y-1">
+            <a
+              href="/assets/files/resume.pdf"
+              download
+              className="group relative inline-flex px-6 py-3 bg-gradient-to-r from-[#20b9f0] to-[#0ea5e9] rounded-xl 
+               text-white font-semibold overflow-hidden transition-all duration-300 
+               hover:shadow-xl hover:shadow-[#20b9f0]/30 hover:-translate-y-1"
+            >
               <span className="relative z-10 flex items-center gap-2">
                 <Download className="w-4 h-4" />
                 Download CV
               </span>
-              <div className="absolute inset-0 bg-gradient-to-r from-[#0ea5e9] to-[#20b9f0] opacity-0 
-                            group-hover:opacity-100 transition-opacity duration-300" />
-            </button>
+              <div
+                className="absolute inset-0 bg-gradient-to-r from-[#0ea5e9] to-[#20b9f0] opacity-0 
+                  group-hover:opacity-100 transition-opacity duration-300"
+              />
+            </a>
           </PopUpOnLoad>
-          
+
           <PopUpOnLoad delay={0.9}>
             <button
-              onClick={() => window.open("mailto:your-email@gmail.com", "_blank")}
+              onClick={() =>
+                window.open(
+                  "https://mail.google.com/mail/?view=cm&fs=1&to=ramelopanisjr.06@gmail.com",
+                  "_blank"
+                )
+              }
               className="group px-6 py-3 border-2 border-[#20b9f0]/50 rounded-xl font-semibold 
                        text-[#20b9f0] hover:bg-[#20b9f0]/10 hover:border-[#20b9f0] 
                        hover:-translate-y-1 transition-all duration-300 flex items-center gap-2"
@@ -180,7 +207,9 @@ export default function LandingPage() {
               { value: "5+", label: "Technologies" },
             ].map((stat, index) => (
               <div key={index} className="text-center md:text-left">
-                <p className="text-2xl md:text-3xl font-bold text-[#20b9f0]">{stat.value}</p>
+                <p className="text-2xl md:text-3xl font-bold text-[#20b9f0]">
+                  {stat.value}
+                </p>
                 <p className="text-xs md:text-sm text-gray-500">{stat.label}</p>
               </div>
             ))}
@@ -193,13 +222,17 @@ export default function LandingPage() {
         <PopUpOnLoad delay={0.3}>
           <div className="relative">
             {/* Decorative Elements */}
-            <div className="absolute -inset-4 bg-gradient-to-r from-[#20b9f0] via-purple-500 to-[#20b9f0] 
-                          rounded-3xl opacity-20 blur-2xl animate-pulse" />
+            <div
+              className="absolute -inset-4 bg-gradient-to-r from-[#20b9f0] via-purple-500 to-[#20b9f0] 
+                          rounded-3xl opacity-20 blur-2xl animate-pulse"
+            />
             <div className="absolute -inset-1 bg-gradient-to-r from-[#20b9f0] to-purple-500 rounded-3xl opacity-50" />
-            
+
             {/* Main Image Container */}
-            <div className="relative w-[300px] md:w-[450px] h-[350px] md:h-[550px] rounded-2xl overflow-hidden 
-                          border-2 border-white/10 shadow-2xl shadow-[#20b9f0]/20">
+            <div
+              className="relative w-[300px] md:w-[450px] h-[350px] md:h-[550px] rounded-2xl overflow-hidden 
+                          border-2 border-white/10 shadow-2xl shadow-[#20b9f0]/20"
+            >
               <Image
                 src="/assets/images/profile-picture.png"
                 alt="Ramel Panis - Web Developer"
@@ -213,8 +246,10 @@ export default function LandingPage() {
             </div>
 
             {/* Floating Badge */}
-            <div className="absolute -bottom-4 -left-4 md:-left-8 px-4 py-2 bg-[#1a1a2e]/90 border border-white/10 
-                          rounded-xl backdrop-blur-sm shadow-xl animate-bounce-slow">
+            <div
+              className="absolute -bottom-4 -left-4 md:-left-8 px-4 py-2 bg-[#1a1a2e]/90 border border-white/10 
+                          rounded-xl backdrop-blur-sm shadow-xl animate-bounce-slow"
+            >
               <div className="flex items-center gap-2">
                 <div className="w-8 h-8 bg-[#20b9f0] rounded-lg flex items-center justify-center">
                   <span className="text-lg">🚀</span>
@@ -227,12 +262,17 @@ export default function LandingPage() {
             </div>
 
             {/* Tech Stack Badge */}
-            <div className="absolute -top-4 -right-4 md:-right-8 px-4 py-2 bg-[#1a1a2e]/90 border border-white/10 
-                          rounded-xl backdrop-blur-sm shadow-xl">
+            <div
+              className="absolute -top-4 -right-4 md:-right-8 px-4 py-2 bg-[#1a1a2e]/90 border border-white/10 
+                          rounded-xl backdrop-blur-sm shadow-xl"
+            >
               <div className="flex items-center gap-2">
                 <div className="flex -space-x-2">
                   {["⚛️", "🔷", "🟢"].map((emoji, i) => (
-                    <div key={i} className="w-6 h-6 bg-white/10 rounded-full flex items-center justify-center text-xs">
+                    <div
+                      key={i}
+                      className="w-6 h-6 bg-white/10 rounded-full flex items-center justify-center text-xs"
+                    >
                       {emoji}
                     </div>
                   ))}
