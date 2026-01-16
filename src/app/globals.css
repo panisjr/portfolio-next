@@ -1,6 +1,48 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
+@layer utilities {
+  /* Infinite Scroll Animation */
+  @keyframes scroll {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+
+  .animate-scroll {
+    animation: scroll linear infinite;
+  }
+
+  .direction-reverse {
+    animation-direction: reverse;
+  }
+
+  /* Pause animation on hover */
+  .pause {
+    animation-play-state: paused !important;
+  }
+
+  /* Scroller mask for fade edges */
+  .scroller {
+    -webkit-mask-image: linear-gradient(
+      to right,
+      transparent,
+      white 10%,
+      white 90%,
+      transparent
+    );
+    mask-image: linear-gradient(
+      to right,
+      transparent,
+      white 10%,
+      white 90%,
+      transparent
+    );
+  }
+}
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {

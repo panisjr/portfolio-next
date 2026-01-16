@@ -16,95 +16,24 @@ import Image from "next/image";
 // Framework data with categories
 const frameworks = {
   frontend: [
-    {
-      name: "React",
-      icon: "/assets/icons/react.svg",
-      color: "#61DAFB",
-      level: 90,
-    },
-    {
-      name: "Next.js",
-      icon: "/assets/icons/nextjs.svg",
-      color: "#ffffff",
-      level: 85,
-    },
-    {
-      name: "TypeScript",
-      icon: "/assets/icons/typescript.svg",
-      color: "#3178C6",
-      level: 80,
-    },
-    {
-      name: "Tailwind CSS",
-      icon: "/assets/icons/tailwind.svg",
-      color: "#06B6D4",
-      level: 95,
-    },
-    {
-      name: "Vue.js",
-      icon: "/assets/icons/vue.svg",
-      color: "#4FC08D",
-      level: 70,
-    },
+    { name: "React", icon: "/assets/icons/react.svg", color: "#61DAFB", level: 90 },
+    { name: "Next.js", icon: "/assets/icons/nextjs.svg", color: "#ffffff", level: 85 },
+    { name: "TypeScript", icon: "/assets/icons/typescript.svg", color: "#3178C6", level: 80 },
+    { name: "Tailwind CSS", icon: "/assets/icons/tailwind.svg", color: "#06B6D4", level: 95 },
+    { name: "Vue.js", icon: "/assets/icons/vue.svg", color: "#4FC08D", level: 70 },
   ],
   backend: [
-    {
-      name: "Node.js",
-      icon: "/assets/icons/nodejs.svg",
-      color: "#339933",
-      level: 80,
-    },
-    {
-      name: "Express",
-      icon: "/assets/icons/express.svg",
-      color: "#ffffff",
-      level: 75,
-    },
-    {
-      name: "Python",
-      icon: "/assets/icons/python.svg",
-      color: "#3776AB",
-      level: 70,
-    },
-    {
-      name: "PostgreSQL",
-      icon: "/assets/icons/postgresql.svg",
-      color: "#4169E1",
-      level: 75,
-    },
-    {
-      name: "MongoDB",
-      icon: "/assets/icons/mongodb.svg",
-      color: "#47A248",
-      level: 80,
-    },
+    { name: "Node.js", icon: "/assets/icons/nodejs.svg", color: "#339933", level: 80 },
+    { name: "Express", icon: "/assets/icons/express.png", color: "#ffffff", level: 75 },
+    { name: "Python", icon: "/assets/icons/python.svg", color: "#3776AB", level: 70 },
+    { name: "PostgreSQL", icon: "/assets/icons/postgresql.svg", color: "#4169E1", level: 75 },
   ],
   tools: [
     { name: "Git", icon: "/assets/icons/git.svg", color: "#F05032", level: 85 },
-    {
-      name: "Docker",
-      icon: "/assets/icons/docker.svg",
-      color: "#2496ED",
-      level: 65,
-    },
-    {
-      name: "Figma",
-      icon: "/assets/icons/figma.svg",
-      color: "#F24E1E",
-      level: 80,
-    },
-    {
-      name: "VS Code",
-      icon: "/assets/icons/vscode.svg",
-      color: "#007ACC",
-      level: 95,
-    },
-    {
-      name: "Vercel",
-      icon: "/assets/icons/vercel.svg",
-      color: "#ffffff",
-      level: 85,
-    },
+    { name: "Docker", icon: "/assets/icons/docker.svg", color: "#2496ED", level: 65 },
+    { name: "Figma", icon: "/assets/icons/figma.svg", color: "#F24E1E", level: 80 },
+    { name: "VS Code", icon: "/assets/icons/vscode.svg", color: "#007ACC", level: 95 },
+    { name: "Vercel", icon: "/assets/icons/vercel.svg", color: "#ffffff", level: 85 },
   ],
 };
 
@@ -114,26 +43,18 @@ const allFrameworks = [
   ...frameworks.tools,
 ];
 
+// Create a reversed copy without mutating original
+const allFrameworksReversed = [...allFrameworks].reverse();
+
 const categories = [
   { id: "all", name: "All", icon: Layers, count: allFrameworks.length },
-  {
-    id: "frontend",
-    name: "Frontend",
-    icon: Palette,
-    count: frameworks.frontend.length,
-  },
-  {
-    id: "backend",
-    name: "Backend",
-    icon: Database,
-    count: frameworks.backend.length,
-  },
+  { id: "frontend", name: "Frontend", icon: Palette, count: frameworks.frontend.length },
+  { id: "backend", name: "Backend", icon: Database, count: frameworks.backend.length },
   { id: "tools", name: "Tools", icon: Wrench, count: frameworks.tools.length },
 ];
 
 export default function FrameworksList() {
   const [activeCategory, setActiveCategory] = useState("all");
-  const [hoveredFramework, setHoveredFramework] = useState<string | null>(null);
 
   const getFilteredFrameworks = () => {
     if (activeCategory === "all") return allFrameworks;
@@ -164,7 +85,7 @@ export default function FrameworksList() {
         {["</>", "{}", "[]", "//", "=>", "&&"].map((symbol, i) => (
           <motion.div
             key={i}
-            className="absolute text-[#20b9f0]/10 text-4xl font-mono font-bold"
+            className="absolute text-[#20b9f0]/10 text-4xl font-mono font-bold select-none"
             style={{
               left: `${15 + i * 15}%`,
               top: `${20 + (i % 3) * 25}%`,
@@ -201,9 +122,7 @@ export default function FrameworksList() {
             className="inline-flex items-center gap-2 px-4 py-2 mb-6 bg-[#20b9f0]/10 border border-[#20b9f0]/20 rounded-full backdrop-blur-sm"
           >
             <Code2 className="w-4 h-4 text-[#20b9f0]" />
-            <span className="text-sm text-[#20b9f0] font-medium">
-              Tech Stack
-            </span>
+            <span className="text-sm text-[#20b9f0] font-medium">Tech Stack</span>
           </motion.div>
 
           {/* Title */}
@@ -235,7 +154,7 @@ export default function FrameworksList() {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               onClick={() => setActiveCategory(category.id)}
-              className={`group flex items-center gap-2 px-5 py-2.5 rounded-xl font-medium transition-all duration-300 ${
+              className={`group flex items-center gap-2 px-5 py-2.5 rounded-xl font-medium transition-all duration-300 cursor-pointer ${
                 activeCategory === category.id
                   ? "bg-[#20b9f0] text-white shadow-lg shadow-[#20b9f0]/25"
                   : "bg-white/5 text-gray-400 hover:bg-white/10 hover:text-white border border-white/10"
@@ -254,7 +173,7 @@ export default function FrameworksList() {
           ))}
         </motion.div>
 
-        {/* Auto-Scroll Marquee */}
+        {/* Auto-Scroll Marquee - Row 1 */}
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
@@ -262,36 +181,24 @@ export default function FrameworksList() {
           transition={{ duration: 0.8, delay: 0.3 }}
           className="relative"
         >
-          {/* Fade Edges */}
-          <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-[#0a0a0a] to-transparent z-10 pointer-events-none" />
-          <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-[#0a0a0a] to-transparent z-10 pointer-events-none" />
-
-          <AutoScrollCards duration={50}>
-            {[...allFrameworks, ...allFrameworks].map((framework, index) => (
+          <AutoScrollCards duration={40} pauseOnHover={true}>
+            {allFrameworks.map((framework, index) => (
               <FrameworkCard
-                key={`${framework.name}-${index}`}
+                key={`row1-${framework.name}-${index}`}
                 framework={framework}
-                isHovered={hoveredFramework === framework.name}
-                onHover={() => setHoveredFramework(framework.name)}
-                onLeave={() => setHoveredFramework(null)}
               />
             ))}
           </AutoScrollCards>
 
           {/* Second Row - Reverse Direction */}
           <div className="mt-6">
-            <AutoScrollCards duration={60}>
-              {[...allFrameworks.reverse(), ...allFrameworks].map(
-                (framework, index) => (
-                  <FrameworkCard
-                    key={`${framework.name}-reverse-${index}`}
-                    framework={framework}
-                    isHovered={hoveredFramework === framework.name}
-                    onHover={() => setHoveredFramework(framework.name)}
-                    onLeave={() => setHoveredFramework(null)}
-                  />
-                )
-              )}
+            <AutoScrollCards duration={45} reverse={true} pauseOnHover={true}>
+              {allFrameworksReversed.map((framework, index) => (
+                <FrameworkCard
+                  key={`row2-${framework.name}-${index}`}
+                  framework={framework}
+                />
+              ))}
             </AutoScrollCards>
           </div>
         </motion.div>
@@ -317,7 +224,7 @@ export default function FrameworksList() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             {getFilteredFrameworks().map((framework, index) => (
               <motion.div
-                key={framework.name}
+                key={`grid-${framework.name}`}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -341,9 +248,7 @@ export default function FrameworksList() {
             <div className="w-16 h-16 rounded-2xl bg-[#20b9f0]/20 flex items-center justify-center mb-4">
               <Code2 className="w-8 h-8 text-[#20b9f0]" />
             </div>
-            <h3 className="text-xl font-bold text-white mb-2">
-              Always Learning
-            </h3>
+            <h3 className="text-xl font-bold text-white mb-2">Always Learning</h3>
             <p className="text-gray-400 mb-6 max-w-md">
               Technology evolves fast. I&#39;m committed to continuous learning
               and staying updated with the latest trends.
@@ -351,7 +256,7 @@ export default function FrameworksList() {
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="group flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-[#20b9f0] to-[#0ea5e9] rounded-xl text-white font-semibold shadow-lg shadow-[#20b9f0]/25 hover:shadow-xl hover:shadow-[#20b9f0]/30 transition-all duration-300"
+              className="group flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-[#20b9f0] to-[#0ea5e9] rounded-xl text-white font-semibold shadow-lg shadow-[#20b9f0]/25 hover:shadow-xl hover:shadow-[#20b9f0]/30 transition-all duration-300 cursor-pointer"
             >
               View My Projects
               <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
@@ -366,38 +271,28 @@ export default function FrameworksList() {
 // Framework Card Component for Marquee
 function FrameworkCard({
   framework,
-  isHovered,
-  onHover,
-  onLeave,
 }: {
   framework: { name: string; icon: string; color: string; level: number };
-  isHovered: boolean;
-  onHover: () => void;
-  onLeave: () => void;
 }) {
   return (
-    <motion.div
-      onMouseEnter={onHover}
-      onMouseLeave={onLeave}
-      whileHover={{ scale: 1.05, y: -5 }}
-      className="group relative flex items-center gap-4 px-6 py-4 mx-3 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-sm hover:bg-white/10 hover:border-[#20b9f0]/30 transition-all duration-300 cursor-pointer min-w-[200px]"
+    <div
+      className="group relative flex items-center gap-4 px-6 py-4 mx-3 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-sm hover:bg-white/10 hover:border-[#20b9f0]/30 transition-all duration-300 cursor-pointer min-w-[220px] hover:scale-105 hover:-translate-y-1"
       style={{
-        boxShadow: isHovered
-          ? `0 10px 40px -10px ${framework.color}40`
-          : "none",
+        ["--glow-color" as string]: framework.color,
       }}
     >
-      {/* Glow Effect */}
+      {/* Glow Effect on Hover */}
       <div
-        className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+        className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
         style={{
-          background: `radial-gradient(circle at center, ${framework.color}10, transparent 70%)`,
+          background: `radial-gradient(circle at center, ${framework.color}15, transparent 70%)`,
+          boxShadow: `0 10px 40px -10px ${framework.color}30`,
         }}
       />
 
-      {/* Icon */}
+      {/* Icon Container */}
       <div
-        className="relative w-12 h-12 rounded-xl flex items-center justify-center transition-all duration-300"
+        className="relative w-12 h-12 rounded-xl flex items-center justify-center transition-all duration-300 group-hover:scale-110"
         style={{
           backgroundColor: `${framework.color}15`,
           border: `1px solid ${framework.color}30`,
@@ -412,26 +307,25 @@ function FrameworkCard({
         />
       </div>
 
-      {/* Name */}
-      <div>
+      {/* Content */}
+      <div className="relative">
         <p className="font-semibold text-white group-hover:text-[#20b9f0] transition-colors">
           {framework.name}
         </p>
         <div className="flex items-center gap-2 mt-1">
           <div className="w-16 h-1.5 bg-white/10 rounded-full overflow-hidden">
-            <motion.div
-              initial={{ width: 0 }}
-              whileInView={{ width: `${framework.level}%` }}
-              viewport={{ once: true }}
-              transition={{ duration: 1, delay: 0.2 }}
-              className="h-full rounded-full"
-              style={{ backgroundColor: framework.color }}
+            <div
+              className="h-full rounded-full transition-all duration-500"
+              style={{
+                width: `${framework.level}%`,
+                backgroundColor: framework.color,
+              }}
             />
           </div>
           <span className="text-xs text-gray-500">{framework.level}%</span>
         </div>
       </div>
-    </motion.div>
+    </div>
   );
 }
 
@@ -448,7 +342,7 @@ function FrameworkDetailCard({
     >
       {/* Background Glow */}
       <div
-        className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+        className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
         style={{
           background: `radial-gradient(circle at top right, ${framework.color}15, transparent 60%)`,
         }}
@@ -493,7 +387,7 @@ function FrameworkDetailCard({
               whileInView={{ width: `${framework.level}%` }}
               viewport={{ once: true }}
               transition={{ duration: 1, delay: 0.3, ease: "easeOut" }}
-              className="h-full rounded-full transition-all duration-300"
+              className="h-full rounded-full"
               style={{
                 background: `linear-gradient(90deg, ${framework.color}, ${framework.color}80)`,
                 boxShadow: `0 0 10px ${framework.color}50`,
@@ -516,14 +410,12 @@ function FrameworkDetailCard({
               {[...Array(5)].map((_, i) => (
                 <div
                   key={i}
-                  className={`w-1.5 h-1.5 rounded-full transition-colors ${
-                    i < Math.floor(framework.level / 20) ? "" : "bg-white/10"
-                  }`}
+                  className="w-1.5 h-1.5 rounded-full transition-colors"
                   style={{
                     backgroundColor:
                       i < Math.floor(framework.level / 20)
                         ? framework.color
-                        : undefined,
+                        : "rgba(255,255,255,0.1)",
                   }}
                 />
               ))}
