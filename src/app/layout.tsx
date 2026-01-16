@@ -31,7 +31,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${poppins.variable} ${amarante.variable}  ${rubik.variable} antialiased overflow-hidden`}
+        className={`${poppins.variable} ${amarante.variable}  ${rubik.variable} antialiased`}
       >
         <Navbar />
         <div

@@ -189,7 +189,7 @@ export default function Navbar() {
               </motion.div>
 
               {/* Navigation Menu */}
-              <NavigationMenu className="hidden lg:flex">
+              <NavigationMenu viewport={false}>
                 <NavigationMenuList className="flex items-center gap-1">
                   {/* Home */}
                   <NavigationMenuItem>
