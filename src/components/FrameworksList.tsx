@@ -11,7 +11,7 @@ export default function FrameworksList() {
       <div className=" bg-[#161616] text-[#fafafa] border-t-2 border-t-gray-300">
         <div className="flex items-center justify-center pt-5">
           <p className="font-amarante text-3xl font-bold text-nowrap tracking-widest">
-            FRAMEWORKS
+            FRAMEWORKS s
           </p>
         </div>
         <div className="flex items-center justify-center overflow-hidden py-5">
