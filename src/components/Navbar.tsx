@@ -245,7 +245,7 @@ export default function Navbar() {
                     <NavigationMenuLink asChild>
                       <Link
                         href="/about/"
-                        className="flex items-center gap-2 bg-transparent text-gray-300 hover:text-white font-medium px-4 py-2 rounded-xl hover:bg-white/5 transition-all duration-300"
+                        className="flex flex-row items-center gap-2 bg-transparent text-gray-300 hover:text-white font-medium px-4 py-2 rounded-xl hover:bg-white/5 transition-all duration-300"
                       >
                         <User className="w-4 h-4" />
                         About

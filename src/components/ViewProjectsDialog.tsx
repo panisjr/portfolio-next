@@ -28,7 +28,7 @@ export interface viewProjectTypes {
 const loc = "/assets/images";
 const latestProject: viewProjectTypes[] = [
   {
-    projectName: "SALIGAN - nextjs, mapbox, supabase",
+    projectName: "SALIGAN",
     description:
       "The System for Administering Local Information & Governance At the Neighborhood is a modern solution designed to streamline barangay operations, enhance transparency, and bring local services closer to residents. From managing records and community programs to improving communication between officials and citizens, our platform empowers neighborhood leaders with the tools they need to serve more efficiently and responsively.",
     image: [
@@ -49,7 +49,7 @@ const latestProject: viewProjectTypes[] = [
     link: "https://saligan.vercel.app/",
   },
   {
-    projectName: "DRSchecker - nextjs, gemini api",
+    projectName: "DRSchecker",
     description:
       "A smart assessment tool designed to evaluate a user's stress and depression levels based on their responses to guided questions or statements, using a reliable rating scale. This application leverages AI to interpret results and provide personalized advice, coping strategies, and mental wellness resources.",
     image: [
@@ -66,7 +66,7 @@ const latestProject: viewProjectTypes[] = [
     ],
   },
   {
-    projectName: "ATLS",
+    projectName: "ATLS - Traffic System",
     description:
       "An intelligent traffic management solution designed to reduce road congestion by automating traffic light operations based on real-time data. This system uses sensors or simulated input to detect vehicle density at intersections, enabling dynamic adjustment of light durations to optimize traffic flow.",
     image: [
