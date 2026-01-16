@@ -544,6 +544,7 @@ function ProjectCard({
           src={project.image}
           alt={project.projectName}
           fill
+          sizes="(max-width: 768px) 100vw, 50vw"
           className="object-cover transition-transform duration-500 group-hover:scale-110"
         />
         {/* Overlay */}
