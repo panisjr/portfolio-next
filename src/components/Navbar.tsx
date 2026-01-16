@@ -28,7 +28,12 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 
-const components: { title: string; href: string; description: string; status: string }[] = [
+const components: {
+  title: string;
+  href: string;
+  description: string;
+  status: string;
+}[] = [
   {
     title: "DRSchecker",
     href: "https://drschecker.vercel.app",
@@ -96,8 +101,8 @@ function ListItem({
 export default function Navbar() {
   const router = useRouter();
   const [isWidth, setIsWidth] = useState<boolean | null>(null);
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState<boolean>(false);
+  const [scrolled, setScrolled] = useState<boolean>(false);
 
   const handleSmoothNavigate = (id: string) => {
     const el = document.getElementById(id);
@@ -108,27 +113,30 @@ export default function Navbar() {
   };
 
   useEffect(() => {
+    const el = document.getElementById("app-scroll");
+    if (!el) return;
+
+    const onScroll = () => {
+      setScrolled(el.scrollTop > 20);
+    };
+
     const checkScreen = () => {
       const currentWidth = window.innerWidth;
       const isNowMobile = currentWidth <= 1024;
       setIsWidth(isNowMobile);
     };
 
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 20);
-    };
-
     checkScreen();
-    handleScroll();
+    onScroll();
+
     window.addEventListener("resize", checkScreen);
-    window.addEventListener("scroll", handleScroll);
+    el.addEventListener("scroll", onScroll);
 
     return () => {
       window.removeEventListener("resize", checkScreen);
-      window.removeEventListener("scroll", handleScroll);
+      el.removeEventListener("scroll", onScroll);
     };
   }, []);
-
   if (isWidth === null) {
     return null;
   }
@@ -198,7 +206,9 @@ export default function Navbar() {
                           <li className="row-span-3">
                             <NavigationMenuLink asChild>
                               <div
-                                onClick={() => router.push("https://saligan.vercel.app/")}
+                                onClick={() =>
+                                  router.push("https://saligan.vercel.app/")
+                                }
                                 className="group cursor-pointer flex h-full w-full flex-col justify-end rounded-xl bg-gradient-to-b from-[#20b9f0]/20 to-[#20b9f0]/5 p-6 no-underline outline-none select-none transition-all duration-300 hover:from-[#20b9f0]/30 hover:to-[#20b9f0]/10 border border-[#20b9f0]/20"
                               >
                                 <div className="relative w-[120px] h-[40px] rounded-lg bg-white/10 backdrop-blur-sm overflow-hidden">
@@ -211,11 +221,14 @@ export default function Navbar() {
                                   />
                                 </div>
                                 <div className="flex items-center gap-2 mt-4 mb-2">
-                                  <span className="text-lg font-bold text-white">Latest Project</span>
+                                  <span className="text-lg font-bold text-white">
+                                    Latest Project
+                                  </span>
                                   <ExternalLink className="w-4 h-4 text-[#20b9f0] opacity-0 group-hover:opacity-100 transition-opacity" />
                                 </div>
                                 <p className="text-sm text-gray-400 leading-relaxed">
-                                  Empowering communities through smarter local governance.
+                                  Empowering communities through smarter local
+                                  governance.
                                 </p>
                               </div>
                             </NavigationMenuLink>
@@ -228,12 +241,16 @@ export default function Navbar() {
                           <NavDropdownItem
                             title="My Latest Projects"
                             description="Take a preview of my latest work"
-                            onClick={() => handleSmoothNavigate("showOfMyLatestWork")}
+                            onClick={() =>
+                              handleSmoothNavigate("showOfMyLatestWork")
+                            }
                           />
                           <NavDropdownItem
                             title="Frameworks"
                             description="Technologies I work with"
-                            onClick={() => handleSmoothNavigate("frameworksList")}
+                            onClick={() =>
+                              handleSmoothNavigate("frameworksList")
+                            }
                           />
                         </ul>
                       </div>
@@ -263,7 +280,9 @@ export default function Navbar() {
                       <div className="w-[600px] p-4 bg-[#0f0f0f]/95 backdrop-blur-xl border border-white/10 rounded-2xl shadow-2xl">
                         <div className="flex items-center gap-2 mb-4 pb-3 border-b border-white/10">
                           <FolderOpen className="w-5 h-5 text-[#20b9f0]" />
-                          <span className="font-bold text-white">My Projects</span>
+                          <span className="font-bold text-white">
+                            My Projects
+                          </span>
                         </div>
                         <ul className="grid gap-2 md:grid-cols-2">
                           {components.map((component) => (
@@ -291,7 +310,9 @@ export default function Navbar() {
                       <div className="w-[350px] p-4 bg-[#0f0f0f]/95 backdrop-blur-xl border border-white/10 rounded-2xl shadow-2xl">
                         <div className="flex items-center gap-2 mb-4 pb-3 border-b border-white/10">
                           <Code2 className="w-5 h-5 text-[#20b9f0]" />
-                          <span className="font-bold text-white">My Skills</span>
+                          <span className="font-bold text-white">
+                            My Skills
+                          </span>
                         </div>
                         <div className="space-y-3">
                           <SkillCard
@@ -324,7 +345,9 @@ export default function Navbar() {
                       <div className="w-[400px] p-4 bg-[#0f0f0f]/95 backdrop-blur-xl border border-white/10 rounded-2xl shadow-2xl">
                         <div className="flex items-center gap-2 mb-4 pb-3 border-b border-white/10">
                           <Briefcase className="w-5 h-5 text-[#20b9f0]" />
-                          <span className="font-bold text-white">Experience</span>
+                          <span className="font-bold text-white">
+                            Experience
+                          </span>
                         </div>
                         <ExperienceCard
                           company="Symphonics Co. Ltd."
@@ -347,7 +370,9 @@ export default function Navbar() {
                       <div className="w-[300px] p-4 bg-[#0f0f0f]/95 backdrop-blur-xl border border-white/10 rounded-2xl shadow-2xl">
                         <div className="flex items-center gap-2 mb-4 pb-3 border-b border-white/10">
                           <Mail className="w-5 h-5 text-[#20b9f0]" />
-                          <span className="font-bold text-white">Get in Touch</span>
+                          <span className="font-bold text-white">
+                            Get in Touch
+                          </span>
                         </div>
                         <div className="space-y-3">
                           <ContactCard
@@ -505,14 +530,18 @@ export default function Navbar() {
                               <div className="w-10 h-10 rounded-lg bg-[#20b9f0]/10 flex items-center justify-center">
                                 <item.icon className="w-5 h-5 text-[#20b9f0]" />
                               </div>
-                              <span className="font-medium text-white">{item.name}</span>
+                              <span className="font-medium text-white">
+                                {item.name}
+                              </span>
                             </div>
                             <ChevronRight className="w-5 h-5 text-gray-500" />
                           </Link>
                         ) : (
                           <MobileNavDropdown
                             title={item.name}
-                            icon={<item.icon className="w-5 h-5 text-[#20b9f0]" />}
+                            icon={
+                              <item.icon className="w-5 h-5 text-[#20b9f0]" />
+                            }
                           >
                             {item.name === "Projects" && (
                               <div className="space-y-2 mt-2">
@@ -523,8 +552,12 @@ export default function Navbar() {
                                     className="flex items-center justify-between p-3 rounded-lg bg-white/5 hover:bg-[#20b9f0]/10 transition-colors"
                                   >
                                     <div>
-                                      <p className="font-medium text-white text-sm">{comp.title}</p>
-                                      <p className="text-xs text-gray-500">{comp.description}</p>
+                                      <p className="font-medium text-white text-sm">
+                                        {comp.title}
+                                      </p>
+                                      <p className="text-xs text-gray-500">
+                                        {comp.description}
+                                      </p>
                                     </div>
                                     {comp.status === "live" && (
                                       <span className="px-2 py-0.5 text-[10px] bg-green-500/20 text-green-400 rounded-full">
@@ -537,9 +570,24 @@ export default function Navbar() {
                             )}
                             {item.name === "Skills" && (
                               <div className="space-y-2 mt-2">
-                                <SkillCard title="Full-Stack Development" description="Front-end & Back-end" icon="🚀" compact />
-                                <SkillCard title="Problem Solving" description="Analytical thinking" icon="🧩" compact />
-                                <SkillCard title="UI/UX Design" description="Beautiful interfaces" icon="🎨" compact />
+                                <SkillCard
+                                  title="Full-Stack Development"
+                                  description="Front-end & Back-end"
+                                  icon="🚀"
+                                  compact
+                                />
+                                <SkillCard
+                                  title="Problem Solving"
+                                  description="Analytical thinking"
+                                  icon="🧩"
+                                  compact
+                                />
+                                <SkillCard
+                                  title="UI/UX Design"
+                                  description="Beautiful interfaces"
+                                  icon="🎨"
+                                  compact
+                                />
                               </div>
                             )}
                             {item.name === "Experience" && (
@@ -595,7 +643,9 @@ export default function Navbar() {
 
                   {/* Footer */}
                   <div className="p-4 text-center">
-                    <p className="text-xs text-gray-500">© 2024 Ramel Panis. All rights reserved.</p>
+                    <p className="text-xs text-gray-500">
+                      © 2024 Ramel Panis. All rights reserved.
+                    </p>
                   </div>
                 </motion.div>
               </>
@@ -654,8 +704,12 @@ function SkillCard({
         {icon}
       </div>
       <div>
-        <p className={`font-bold text-white ${compact ? "text-sm" : ""}`}>{title}</p>
-        <p className={`text-gray-400 ${compact ? "text-xs" : "text-sm"}`}>{description}</p>
+        <p className={`font-bold text-white ${compact ? "text-sm" : ""}`}>
+          {title}
+        </p>
+        <p className={`text-gray-400 ${compact ? "text-xs" : "text-sm"}`}>
+          {description}
+        </p>
       </div>
     </div>
   );
@@ -686,15 +740,23 @@ function ExperienceCard({
     >
       <div className="flex items-start justify-between">
         <div>
-          <p className={`font-bold text-white group-hover:text-[#20b9f0] transition-colors ${compact ? "text-sm" : ""}`}>
+          <p
+            className={`font-bold text-white group-hover:text-[#20b9f0] transition-colors ${
+              compact ? "text-sm" : ""
+            }`}
+          >
             {company}
           </p>
-          <p className={`text-gray-400 ${compact ? "text-xs" : "text-sm"}`}>{role}</p>
+          <p className={`text-gray-400 ${compact ? "text-xs" : "text-sm"}`}>
+            {role}
+          </p>
         </div>
         <ExternalLink className="w-4 h-4 text-gray-500 group-hover:text-[#20b9f0] transition-colors" />
       </div>
       <div className="flex items-center gap-2 mt-2">
-        <span className="px-2 py-0.5 text-xs bg-[#20b9f0]/20 text-[#20b9f0] rounded-full">{type}</span>
+        <span className="px-2 py-0.5 text-xs bg-[#20b9f0]/20 text-[#20b9f0] rounded-full">
+          {type}
+        </span>
         <span className="text-xs text-gray-500">{period}</span>
       </div>
     </Link>
@@ -726,7 +788,11 @@ function ContactCard({
       </div>
       <div className="min-w-0">
         <p className="text-xs text-gray-500">{label}</p>
-        <p className={`font-medium text-white truncate group-hover:text-[#20b9f0] transition-colors ${compact ? "text-sm" : ""}`}>
+        <p
+          className={`font-medium text-white truncate group-hover:text-[#20b9f0] transition-colors ${
+            compact ? "text-sm" : ""
+          }`}
+        >
           {value}
         </p>
       </div>
@@ -757,7 +823,10 @@ function MobileNavDropdown({
           </div>
           <span className="font-medium text-white">{title}</span>
         </div>
-        <motion.div animate={{ rotate: isOpen ? 90 : 0 }} transition={{ duration: 0.2 }}>
+        <motion.div
+          animate={{ rotate: isOpen ? 90 : 0 }}
+          transition={{ duration: 0.2 }}
+        >
           <ChevronRight className="w-5 h-5 text-gray-500" />
         </motion.div>
       </button>

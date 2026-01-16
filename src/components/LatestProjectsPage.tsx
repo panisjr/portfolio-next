@@ -347,9 +347,7 @@ export default function LatestProjectsPage() {
                   <Github className="w-6 h-6 text-[#20b9f0]" />
                 </div>
                 <div className="text-left">
-                  <p className="font-semibold text-white">
-                    Want to see more?
-                  </p>
+                  <p className="font-semibold text-white">Want to see more?</p>
                   <p className="text-sm text-gray-500">
                     Check out my GitHub for all projects
                   </p>
@@ -412,6 +410,7 @@ function FeaturedProjectCard({
             src={project.image}
             alt={project.projectName}
             fill
+            sizes="(max-width: 768px) 100vw, 50vw"
             className="object-cover transition-transform duration-700 group-hover:scale-110"
           />
           {/* Overlay Gradient */}
@@ -431,7 +430,9 @@ function FeaturedProjectCard({
           <div
             className={`inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-medium border w-fit mb-3 ${status.color}`}
           >
-            <span className={`w-1.5 h-1.5 rounded-full ${status.dot} animate-pulse`} />
+            <span
+              className={`w-1.5 h-1.5 rounded-full ${status.dot} animate-pulse`}
+            />
             {status.label}
           </div>
 
@@ -529,7 +530,9 @@ function ProjectCard({
       whileHover={{ y: -8 }}
       className="group relative h-full rounded-2xl bg-white/5 border border-white/10 hover:border-[#20b9f0]/30 overflow-hidden transition-all duration-300 cursor-pointer backdrop-blur-sm"
       style={{
-        boxShadow: isHovered ? "0 20px 40px -20px rgba(32, 185, 240, 0.3)" : "none",
+        boxShadow: isHovered
+          ? "0 20px 40px -20px rgba(32, 185, 240, 0.3)"
+          : "none",
       }}
     >
       {/* Glow Effect */}
@@ -550,7 +553,9 @@ function ProjectCard({
         <div
           className={`absolute top-3 left-3 flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-medium border ${status.color} backdrop-blur-sm`}
         >
-          <span className={`w-1.5 h-1.5 rounded-full ${status.dot} animate-pulse`} />
+          <span
+            className={`w-1.5 h-1.5 rounded-full ${status.dot} animate-pulse`}
+          />
           {status.label}
         </div>
 

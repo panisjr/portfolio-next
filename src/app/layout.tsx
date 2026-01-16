@@ -31,12 +31,13 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${poppins.variable} ${amarante.variable}  ${rubik.variable} antialiased`}
+        className={`${poppins.variable} ${amarante.variable}  ${rubik.variable} antialiased overflow-hidden`}
       >
-        <div className="relative w-full h-screen overflow-x-hidden">
-          <div className="absolute inset-0 w-full">
-            <Navbar />
-          </div>
+        <Navbar />
+        <div
+          id="app-scroll"
+          className="relative w-full h-screen overflow-y-auto overflow-x-hidden"
+        >
           {children}
         </div>
       </body>
