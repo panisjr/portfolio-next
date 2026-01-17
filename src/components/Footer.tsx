@@ -19,9 +19,17 @@ import { motion, useInView, Variants } from "framer-motion";
 
 const socialLinks = [
   { icon: Instagram, href: "#", label: "Instagram" },
-  { icon: Facebook, href: "https://www.facebook.com/ramel.panis.1/", label: "Facebook" },
+  {
+    icon: Facebook,
+    href: "https://www.facebook.com/ramel.panis.1/",
+    label: "Facebook",
+  },
   { icon: Github, href: "https://github.com/panisjr", label: "Github" },
-  { icon: Linkedin, href: "https://www.linkedin.com/in/panisjr-ramel/", label: "LinkedIn" },
+  {
+    icon: Linkedin,
+    href: "https://www.linkedin.com/in/panisjr-ramel/",
+    label: "LinkedIn",
+  },
 ];
 
 const quickLinks = [
@@ -34,7 +42,11 @@ const quickLinks = [
 const contactInfo = [
   { icon: MapPin, text: "Brgy. San Roque, Barugo, Leyte", href: "#" },
   { icon: PhoneCall, text: "+63 960 875 7182", href: "tel:+639608757182" },
-  { icon: Mail, text: "ramelopanisjr.06@gmail.com", href: "mailto:ramelopanisjr.06@gmail.com" },
+  {
+    icon: Mail,
+    text: "ramelopanisjr.06@gmail.com",
+    href: "mailto:ramelopanisjr.06@gmail.com",
+  },
 ];
 
 // ✅ Properly typed animation variants
@@ -70,11 +82,11 @@ export default function Footer() {
     setMounted(true);
   }, []);
 
-  const scrollToTop = () => {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth",
-    });
+  const handleSmoothNavigate = (id: string) => {
+    const el = document.getElementById(id);
+    if (el) {
+      el.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
   };
 
   const scrollToSection = (href: string) => {
@@ -87,7 +99,7 @@ export default function Footer() {
   return (
     <footer
       ref={footerRef}
-      className="relative w-full bg-gradient-to-br from-[#0a0a0a] via-[#1a1a2e] to-[#16213e] text-white font-poppins overflow-hidden"
+      className="relative w-full bg-gradient-to-br from-[#0a0a0a] via-[#1a1a2e] to-[#16213e] text-white font-poppins"
     >
       {/* Animated Background Elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -133,7 +145,7 @@ export default function Footer() {
 
       {/* Scroll to Top Button */}
       <motion.button
-        onClick={scrollToTop}
+        onClick={() => handleSmoothNavigate("home")}
         className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 p-4 bg-gradient-to-r from-[#20b9f0] to-[#0ea5e9] rounded-full shadow-lg shadow-[#20b9f0]/30 hover:shadow-xl hover:shadow-[#20b9f0]/40 transition-all duration-300 group z-20"
         whileHover={{ scale: 1.1, y: -5 }}
         whileTap={{ scale: 0.95 }}
@@ -192,7 +204,9 @@ export default function Footer() {
                   whileHover={{ scale: 1.1, y: -3 }}
                   whileTap={{ scale: 0.95 }}
                   initial={{ opacity: 0, y: 20 }}
-                  animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+                  animate={
+                    isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }
+                  }
                   transition={{ delay: 0.3 + index * 0.1 }}
                   aria-label={label}
                 >
@@ -216,7 +230,9 @@ export default function Footer() {
                 <motion.li
                   key={name}
                   initial={{ opacity: 0, x: -20 }}
-                  animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -20 }}
+                  animate={
+                    isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -20 }
+                  }
                   transition={{ delay: 0.4 + index * 0.1 }}
                 >
                   <button
@@ -242,7 +258,9 @@ export default function Footer() {
                 <motion.li
                   key={text}
                   initial={{ opacity: 0, x: -20 }}
-                  animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -20 }}
+                  animate={
+                    isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -20 }
+                  }
                   transition={{ delay: 0.5 + index * 0.1 }}
                 >
                   <a
@@ -295,7 +313,9 @@ export default function Footer() {
         >
           <div className="flex items-center gap-1.5 text-gray-500 text-sm">
             <Copyright className="w-4 h-4" />
-            <span>{new Date().getFullYear()} Ramel Panis. All rights reserved.</span>
+            <span>
+              {new Date().getFullYear()} Ramel Panis. All rights reserved.
+            </span>
           </div>
 
           <div className="flex items-center gap-1.5 text-gray-500 text-sm">
