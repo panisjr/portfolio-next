@@ -43,7 +43,7 @@ export default function AutoScrollCards({
     >
       <div
         ref={scrollerRef}
-        className={`scroller-inner flex w-max gap-0 ${isReady ? "animate-scroll" : ""} ${
+        className={`scroller-inner flex w-max py-2 gap-0 ${isReady ? "animate-scroll" : ""} ${
           reverse ? "direction-reverse" : ""
         }`}
         style={{
