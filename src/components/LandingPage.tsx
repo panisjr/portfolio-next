@@ -31,11 +31,11 @@ export default function LandingPage() {
     }
   };
 
-  const scrollToNext = () => {
-    window.scrollTo({
-      top: window.innerHeight,
-      behavior: "smooth",
-    });
+  const handleSmoothNavigate = (id: string) => {
+    const el = document.getElementById(id);
+    if (el) {
+      el.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
   };
 
   return (
@@ -286,7 +286,7 @@ export default function LandingPage() {
 
       {/* Scroll Indicator */}
       <button
-        onClick={scrollToNext}
+        onClick={() => handleSmoothNavigate("frameworksList")}
         className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 
                  text-gray-500 hover:text-[#20b9f0] transition-colors cursor-pointer animate-bounce"
       >
