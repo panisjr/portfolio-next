@@ -104,12 +104,12 @@ const galleryImages = [
   {
     src: "/assets/images/gallery/g4.jpg",
     alt: "Gallery 4",
-    title: "College Days",
+    title: "Senior's Night",
   },
   {
     src: "/assets/images/gallery/g5.jpg",
     alt: "Gallery 5",
-    title: "Conference",
+    title: "College Days",
   },
 ];
 
@@ -811,13 +811,13 @@ export default function AboutPage() {
 
   const nextImage = () => {
     setCurrentImageIndex((prev) =>
-      prev < galleryImages.length - 1 ? prev + 1 : 0
+      prev < galleryImages.length - 1 ? prev + 1 : 0,
     );
   };
 
   const prevImage = () => {
     setCurrentImageIndex((prev) =>
-      prev > 0 ? prev - 1 : galleryImages.length - 1
+      prev > 0 ? prev - 1 : galleryImages.length - 1,
     );
   };
 
