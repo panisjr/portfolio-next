@@ -477,7 +477,7 @@ const ImageLightbox = ({
       {/* Close Button */}
       <motion.button
         onClick={onClose}
-        className="absolute top-6 right-6 z-10 p-3 rounded-full bg-white/10 border border-white/10 hover:bg-white/20 hover:border-white/30 transition-all group"
+        className="absolute top-6 right-6 z-10 p-3 rounded-full bg-white/10 border border-white/10 hover:bg-white/20 hover:border-white/30 transition-all group cursor-pointer"
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.95 }}
       >
@@ -490,7 +490,7 @@ const ImageLightbox = ({
           e.stopPropagation();
           onPrev();
         }}
-        className="absolute left-6 z-10 p-4 rounded-full bg-white/10 border border-white/10 hover:bg-[#20b9f0]/30 hover:border-[#20b9f0]/50 transition-all"
+        className="absolute left-6 z-10 p-4 rounded-full bg-white/10 border border-white/10 hover:bg-[#20b9f0]/30 hover:border-[#20b9f0]/50 transition-all cursor-pointer"
         whileHover={{ scale: 1.1, x: -5 }}
         whileTap={{ scale: 0.95 }}
       >
@@ -528,7 +528,7 @@ const ImageLightbox = ({
 
         {/* Image Info */}
         <motion.div
-          className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/80 to-transparent"
+          className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/80 to-transparent "
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2 }}
@@ -548,7 +548,7 @@ const ImageLightbox = ({
           e.stopPropagation();
           onNext();
         }}
-        className="absolute right-6 z-10 p-4 rounded-full bg-white/10 border border-white/10 hover:bg-[#20b9f0]/30 hover:border-[#20b9f0]/50 transition-all"
+        className="absolute right-6 z-10 p-4 rounded-full bg-white/10 border border-white/10 hover:bg-[#20b9f0]/30 hover:border-[#20b9f0]/50 transition-all cursor-pointer"
         whileHover={{ scale: 1.1, x: 5 }}
         whileTap={{ scale: 0.95 }}
       >
@@ -570,7 +570,7 @@ const ImageLightbox = ({
                 for (let i = 0; i < Math.abs(diff); i++) onPrev();
               }
             }}
-            className={`relative w-16 h-12 rounded-lg overflow-hidden border-2 transition-all ${
+            className={`relative w-16 h-12 rounded-lg overflow-hidden border-2 transition-all cursor-pointer ${
               index === currentIndex
                 ? "border-[#20b9f0] scale-110"
                 : "border-transparent opacity-50 hover:opacity-100"
@@ -925,7 +925,7 @@ export default function AboutPage() {
             <motion.div variants={itemVariants} className="pt-4">
               <motion.button
                 onClick={() => scrollToSection("#gallery")}
-                className="group flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-[#20b9f0] to-[#0ea5e9] rounded-xl font-semibold text-white hover:shadow-lg hover:shadow-[#20b9f0]/30 transition-all duration-300"
+                className="group flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-[#20b9f0] to-[#0ea5e9] rounded-xl font-semibold text-white hover:shadow-lg hover:shadow-[#20b9f0]/30 transition-all duration-300 cursor-pointer"
                 whileHover={{ scale: 1.05, y: -2 }}
                 whileTap={{ scale: 0.95 }}
               >
