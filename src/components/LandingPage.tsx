@@ -185,7 +185,7 @@ export default function LandingPage() {
               onClick={() =>
                 window.open(
                   "https://mail.google.com/mail/?view=cm&fs=1&to=ramelopanisjr.06@gmail.com",
-                  "_blank"
+                  "_blank",
                 )
               }
               className="group px-6 py-3 border-2 border-[#20b9f0]/50 rounded-xl font-semibold 
@@ -237,9 +237,10 @@ export default function LandingPage() {
                 src="/assets/images/profile-picture.png"
                 alt="Ramel Panis - Web Developer"
                 fill
-                sizes="(max-width: 768px) 300px, 450px"
+                sizes="(max-width: 768px) 300px, 600px"
                 className="object-cover"
                 priority
+                quality={100}
               />
               {/* Overlay Gradient */}
               <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-transparent to-transparent opacity-60" />

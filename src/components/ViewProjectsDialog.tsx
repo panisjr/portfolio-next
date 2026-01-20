@@ -66,6 +66,11 @@ const latestProject: viewProjectTypes[] = [
       `${loc}/d3.png`,
       `${loc}/d4.png`,
       `${loc}/d5.png`,
+      `${loc}/d6.png`,
+      `${loc}/d7.png`,
+      `${loc}/d8.png`,
+      `${loc}/d9.png`,
+      `${loc}/d10.png`,
     ],
     framework: [
       { icon: `${loc}/nextjs.png`, name: "Next.js" },
