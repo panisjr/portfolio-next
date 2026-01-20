@@ -147,7 +147,7 @@ export default function Footer() {
       {/* Scroll to Top Button */}
       <motion.button
         onClick={() => handleSmoothNavigate("home")}
-        className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 p-4 bg-gradient-to-r from-[#20b9f0] to-[#0ea5e9] rounded-full shadow-lg shadow-[#20b9f0]/30 hover:shadow-xl hover:shadow-[#20b9f0]/40 transition-all duration-300 group z-20"
+        className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 p-4 bg-gradient-to-r from-[#20b9f0] to-[#0ea5e9] rounded-full shadow-lg shadow-[#20b9f0]/30 hover:shadow-xl hover:shadow-[#20b9f0]/40 transition-all duration-300 group z-20 cursor-pointer"
         whileHover={{ scale: 1.1, y: -5 }}
         whileTap={{ scale: 0.95 }}
       >
@@ -305,7 +305,7 @@ export default function Footer() {
                 <Mail className="absolute right-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-500" />
               </div>
               <motion.button
-                className="w-full px-4 py-3 bg-gradient-to-r from-[#20b9f0] to-[#0ea5e9] rounded-xl font-semibold text-white hover:shadow-lg hover:shadow-[#20b9f0]/30 transition-all duration-300"
+                className="w-full px-4 py-3 bg-gradient-to-r from-[#20b9f0] to-[#0ea5e9] rounded-xl font-semibold text-white hover:shadow-lg hover:shadow-[#20b9f0]/30 transition-all duration-300 cursor-pointer"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
               >
