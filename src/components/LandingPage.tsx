@@ -190,7 +190,7 @@ export default function LandingPage() {
               }
               className="group px-6 py-3 border-2 border-[#20b9f0]/50 rounded-xl font-semibold 
                        text-[#20b9f0] hover:bg-[#20b9f0]/10 hover:border-[#20b9f0] 
-                       hover:-translate-y-1 transition-all duration-300 flex items-center gap-2"
+                       hover:-translate-y-1 transition-all duration-300 flex items-center gap-2 cursor-pointer"
             >
               <Mail className="w-4 h-4" />
               Contact Me

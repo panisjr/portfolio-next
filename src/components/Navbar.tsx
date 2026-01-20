@@ -195,7 +195,7 @@ export default function Navbar() {
                   <NavigationMenuItem>
                     <NavigationMenuTrigger
                       onClick={() => router.push("/")}
-                      className="bg-transparent text-gray-300 hover:text-white font-medium px-4 py-2 rounded-xl hover:bg-white/5 transition-all duration-300 data-[state=open]:bg-white/5"
+                      className="bg-transparent text-gray-300 hover:text-white font-medium px-4 py-2 rounded-xl hover:bg-white/5 transition-all duration-300 data-[state=open]:bg-white/5 cursor-pointer"
                     >
                       <Home className="w-4 h-4 mr-2" />
                       Home
@@ -272,7 +272,7 @@ export default function Navbar() {
 
                   {/* Projects */}
                   <NavigationMenuItem>
-                    <NavigationMenuTrigger className="bg-transparent text-gray-300 hover:text-white font-medium px-4 py-2 rounded-xl hover:bg-white/5 transition-all duration-300 data-[state=open]:bg-white/5">
+                    <NavigationMenuTrigger className="bg-transparent text-gray-300 hover:text-white font-medium px-4 py-2 rounded-xl hover:bg-white/5 transition-all duration-300 data-[state=open]:bg-white/5 cursor-pointer">
                       <FolderOpen className="w-4 h-4 mr-2" />
                       Projects
                     </NavigationMenuTrigger>
@@ -302,7 +302,7 @@ export default function Navbar() {
 
                   {/* Skills */}
                   <NavigationMenuItem>
-                    <NavigationMenuTrigger className="bg-transparent text-gray-300 hover:text-white font-medium px-4 py-2 rounded-xl hover:bg-white/5 transition-all duration-300 data-[state=open]:bg-white/5">
+                    <NavigationMenuTrigger className="bg-transparent text-gray-300 hover:text-white font-medium px-4 py-2 rounded-xl hover:bg-white/5 transition-all duration-300 data-[state=open]:bg-white/5 cursor-pointer">
                       <Code2 className="w-4 h-4 mr-2" />
                       Skills
                     </NavigationMenuTrigger>
@@ -337,7 +337,7 @@ export default function Navbar() {
 
                   {/* Experience */}
                   <NavigationMenuItem>
-                    <NavigationMenuTrigger className="bg-transparent text-gray-300 hover:text-white font-medium px-4 py-2 rounded-xl hover:bg-white/5 transition-all duration-300 data-[state=open]:bg-white/5">
+                    <NavigationMenuTrigger className="bg-transparent text-gray-300 hover:text-white font-medium px-4 py-2 rounded-xl hover:bg-white/5 transition-all duration-300 data-[state=open]:bg-white/5 cursor-pointer">
                       <Briefcase className="w-4 h-4 mr-2" />
                       Experience
                     </NavigationMenuTrigger>
@@ -362,7 +362,7 @@ export default function Navbar() {
 
                   {/* Contact */}
                   <NavigationMenuItem>
-                    <NavigationMenuTrigger className="bg-transparent text-gray-300 hover:text-white font-medium px-4 py-2 rounded-xl hover:bg-white/5 transition-all duration-300 data-[state=open]:bg-white/5">
+                    <NavigationMenuTrigger className="bg-transparent text-gray-300 hover:text-white font-medium px-4 py-2 rounded-xl hover:bg-white/5 transition-all duration-300 data-[state=open]:bg-white/5 cursor-pointer">
                       <Mail className="w-4 h-4 mr-2" />
                       Contact
                     </NavigationMenuTrigger>

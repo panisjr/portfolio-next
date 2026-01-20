@@ -545,7 +545,7 @@ export function ViewProjectsDialog({
                           <>
                             <motion.button
                               onClick={handlePrev}
-                              className="absolute left-4 top-1/2 -translate-y-1/2 p-3 rounded-full bg-black/50 backdrop-blur-sm border border-white/10 hover:bg-[#20b9f0]/30 hover:border-[#20b9f0]/50 transition-all opacity-0 group-hover:opacity-100"
+                              className="absolute left-4 top-1/2 -translate-y-1/2 p-3 rounded-full bg-black/50 backdrop-blur-sm border border-white/10 hover:bg-[#20b9f0]/30 hover:border-[#20b9f0]/50 transition-all opacity-0 group-hover:opacity-100 cursor-pointer"
                               whileHover={{ scale: 1.1, x: -3 }}
                               whileTap={{ scale: 0.95 }}
                             >
@@ -553,7 +553,7 @@ export function ViewProjectsDialog({
                             </motion.button>
                             <motion.button
                               onClick={handleNext}
-                              className="absolute right-4 top-1/2 -translate-y-1/2 p-3 rounded-full bg-black/50 backdrop-blur-sm border border-white/10 hover:bg-[#20b9f0]/30 hover:border-[#20b9f0]/50 transition-all opacity-0 group-hover:opacity-100"
+                              className="absolute right-4 top-1/2 -translate-y-1/2 p-3 rounded-full bg-black/50 backdrop-blur-sm border border-white/10 hover:bg-[#20b9f0]/30 hover:border-[#20b9f0]/50 transition-all opacity-0 group-hover:opacity-100 cursor-pointer"
                               whileHover={{ scale: 1.1, x: 3 }}
                               whileTap={{ scale: 0.95 }}
                             >
@@ -565,7 +565,7 @@ export function ViewProjectsDialog({
                         {/* Fullscreen Button */}
                         <motion.button
                           onClick={() => setIsFullscreen(true)}
-                          className="absolute bottom-4 right-4 p-3 rounded-xl bg-black/50 backdrop-blur-sm border border-white/10 hover:bg-[#20b9f0]/30 hover:border-[#20b9f0]/50 transition-all opacity-0 group-hover:opacity-100"
+                          className="absolute bottom-4 right-4 p-3 rounded-xl bg-black/50 backdrop-blur-sm border border-white/10 hover:bg-[#20b9f0]/30 hover:border-[#20b9f0]/50 transition-all opacity-0 group-hover:opacity-100 cursor-pointer"
                           whileHover={{ scale: 1.1 }}
                           whileTap={{ scale: 0.95 }}
                         >
@@ -596,7 +596,7 @@ export function ViewProjectsDialog({
                                 setImageLoading(true);
                               }}
                               className={cn(
-                                "relative w-20 h-14 flex-shrink-0 rounded-lg overflow-hidden border-2 transition-all duration-300",
+                                "relative w-20 h-14 flex-shrink-0 rounded-lg overflow-hidden border-2 transition-all duration-300 cursor-pointer",
                                 selectedImageIndex === idx
                                   ? "border-[#20b9f0] shadow-lg shadow-[#20b9f0]/30"
                                   : "border-white/10 opacity-50 hover:opacity-100 hover:border-white/30"

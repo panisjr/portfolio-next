@@ -16,6 +16,7 @@ import {
 import Image from "next/image";
 import React, { useState, useEffect, useRef } from "react";
 import { motion, useInView, Variants } from "framer-motion";
+import { useRouter } from "next/navigation";
 
 const socialLinks = [
   { icon: Instagram, href: "#", label: "Instagram" },
@@ -34,8 +35,8 @@ const socialLinks = [
 
 const quickLinks = [
   { name: "Home", href: "#home" },
-  { name: "About", href: "#about" },
-  { name: "Projects", href: "#projects" },
+  { name: "About", href: "about" },
+  { name: "Projects", href: "#showOfMyLatestWork" },
   { name: "Contact", href: "#contact" },
 ];
 
@@ -77,7 +78,7 @@ export default function Footer() {
   const [mounted, setMounted] = useState(false);
   const footerRef = useRef<HTMLElement>(null);
   const isInView = useInView(footerRef, { once: true, amount: 0.2 });
-
+  const router = useRouter();
   useEffect(() => {
     setMounted(true);
   }, []);
@@ -236,8 +237,16 @@ export default function Footer() {
                   transition={{ delay: 0.4 + index * 0.1 }}
                 >
                   <button
-                    onClick={() => scrollToSection(href)}
-                    className="group flex items-center gap-2 text-gray-400 hover:text-[#20b9f0] transition-all duration-300"
+                    onClick={() => {
+                      if (href === "about") {
+                        router.push("/about");
+                      } else {
+                        {
+                          scrollToSection(href);
+                        }
+                      }
+                    }}
+                    className="group flex items-center gap-2 text-gray-400 hover:text-[#20b9f0] transition-all duration-300 cursor-pointer"
                   >
                     <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                     <span>{name}</span>
