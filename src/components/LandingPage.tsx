@@ -234,10 +234,10 @@ export default function LandingPage() {
                           border-2 border-white/10 shadow-2xl shadow-[#20b9f0]/20"
             >
               <Image
-                src="/assets/images/profile-picture.png"
+                src="/assets/images/profile-picture3.png"
                 alt="Ramel Panis - Web Developer"
                 fill
-                sizes="(max-width: 768px) 300px, 600px"
+                sizes="w-full"
                 className="object-cover"
                 priority
                 quality={100}
